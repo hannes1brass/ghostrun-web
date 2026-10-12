@@ -1,0 +1,271 @@
+{
+ "leagues": [
+  {
+   "id": 1,
+   "name": "Bronze",
+   "color": "#C98A5A"
+  },
+  {
+   "id": 2,
+   "name": "Silber",
+   "color": "#B8C4CC"
+  },
+  {
+   "id": 3,
+   "name": "Gold",
+   "color": "#E8C15A"
+  },
+  {
+   "id": 4,
+   "name": "Elite",
+   "color": "#9B7BFF"
+  },
+  {
+   "id": 5,
+   "name": "Legende",
+   "color": "#00E5CC"
+  }
+ ],
+ "rivals": [
+  {
+   "id": "toni",
+   "name": "Toni Tempo",
+   "title": "Der Frühstarter",
+   "league": 1,
+   "boss": false,
+   "archetype": "Sprinter",
+   "quote": "Die ersten 200 Meter gehören mir.",
+   "runPaceSPerKm": 450,
+   "rideKmh": 18,
+   "portrait": "/assets/rivals/toni.jpg"
+  },
+  {
+   "id": "mira",
+   "name": "Mira Morgen",
+   "title": "Die Pendlerin",
+   "league": 1,
+   "boss": false,
+   "archetype": "Maschine",
+   "quote": "Jeden Morgen dieselbe Runde. Seit Jahren.",
+   "runPaceSPerKm": 420,
+   "rideKmh": 19.5,
+   "portrait": "/assets/rivals/mira.jpg"
+  },
+  {
+   "id": "benny",
+   "name": "Benny Bummel",
+   "title": "Der Spätzünder",
+   "league": 1,
+   "boss": false,
+   "archetype": "Taktiker",
+   "quote": "Ich komme spät. Aber ich komme.",
+   "runPaceSPerKm": 400,
+   "rideKmh": 21,
+   "portrait": "/assets/rivals/benny.jpg"
+  },
+  {
+   "id": "hausmeister",
+   "name": "Der Hausmeister",
+   "title": "Boss der Bronze-Liga",
+   "league": 1,
+   "boss": true,
+   "archetype": "Konterläufer",
+   "quote": "In meinem Revier überholt mich keiner.",
+   "runPaceSPerKm": 380,
+   "rideKmh": 22.5,
+   "portrait": "/assets/rivals/hausmeister.jpg"
+  },
+  {
+   "id": "fiete",
+   "name": "Fiete Flink",
+   "title": "Der Hafenläufer",
+   "league": 2,
+   "boss": false,
+   "archetype": "Sprinter",
+   "quote": "Gegenwind? Kenn ich nicht.",
+   "runPaceSPerKm": 365,
+   "rideKmh": 24,
+   "portrait": "/assets/rivals/fiete.jpg"
+  },
+  {
+   "id": "okan",
+   "name": "Okan Orbit",
+   "title": "Der Rundenzähler",
+   "league": 2,
+   "boss": false,
+   "archetype": "Maschine",
+   "quote": "Gleiches Tempo. Jede Runde. Immer.",
+   "runPaceSPerKm": 350,
+   "rideKmh": 25.5,
+   "portrait": "/assets/rivals/okan.jpg"
+  },
+  {
+   "id": "jana",
+   "name": "Jana Jagd",
+   "title": "Die Verfolgerin",
+   "league": 2,
+   "boss": false,
+   "archetype": "Taktiker",
+   "quote": "Ich sehe dich. Und ich hole dich.",
+   "runPaceSPerKm": 335,
+   "rideKmh": 27,
+   "portrait": "/assets/rivals/jana.jpg"
+  },
+  {
+   "id": "woelfin",
+   "name": "Die Stadtwölfin",
+   "title": "Boss der Silber-Liga",
+   "league": 2,
+   "boss": true,
+   "archetype": "Wildcard",
+   "quote": "Die Nacht gehört dem Rudel.",
+   "runPaceSPerKm": 320,
+   "rideKmh": 28.5,
+   "portrait": "/assets/rivals/woelfin.jpg"
+  },
+  {
+   "id": "rhea",
+   "name": "Rhea Rakete",
+   "title": "Die Zündung",
+   "league": 3,
+   "boss": false,
+   "archetype": "Sprinter",
+   "quote": "Drei, zwei, eins, weg.",
+   "runPaceSPerKm": 310,
+   "rideKmh": 30,
+   "portrait": "/assets/rivals/rhea.jpg"
+  },
+  {
+   "id": "malte",
+   "name": "Malte Metronom",
+   "title": "Der Taktgeber",
+   "league": 3,
+   "boss": false,
+   "archetype": "Maschine",
+   "quote": "Tick. Tack. Tick. Tack.",
+   "runPaceSPerKm": 298,
+   "rideKmh": 31,
+   "portrait": "/assets/rivals/malte.jpg"
+  },
+  {
+   "id": "sora",
+   "name": "Sora Sturm",
+   "title": "Die Böe",
+   "league": 3,
+   "boss": false,
+   "archetype": "Wildcard",
+   "quote": "Du weißt nie, wann ich anziehe.",
+   "runPaceSPerKm": 286,
+   "rideKmh": 32,
+   "portrait": null
+  },
+  {
+   "id": "graf",
+   "name": "Der Graf",
+   "title": "Boss der Gold-Liga",
+   "league": 3,
+   "boss": true,
+   "archetype": "Taktiker",
+   "quote": "Eile ist etwas für Anfänger.",
+   "runPaceSPerKm": 275,
+   "rideKmh": 33.5,
+   "portrait": null
+  },
+  {
+   "id": "viktor",
+   "name": "Viktor Vollgas",
+   "title": "Der Brecher",
+   "league": 4,
+   "boss": false,
+   "archetype": "Sprinter",
+   "quote": "Bremsen ist eine Meinung.",
+   "runPaceSPerKm": 265,
+   "rideKmh": 34.5,
+   "portrait": null
+  },
+  {
+   "id": "ines",
+   "name": "Ines Eisen",
+   "title": "Die Unbeugsame",
+   "league": 4,
+   "boss": false,
+   "archetype": "Maschine",
+   "quote": "Schmerz ist nur Information.",
+   "runPaceSPerKm": 255,
+   "rideKmh": 35.5,
+   "portrait": null
+  },
+  {
+   "id": "nia",
+   "name": "Nia Nordwind",
+   "title": "Die Kälte",
+   "league": 4,
+   "boss": false,
+   "archetype": "Taktiker",
+   "quote": "Ich warte. Dann bin ich weg.",
+   "runPaceSPerKm": 245,
+   "rideKmh": 36.5,
+   "portrait": null
+  },
+  {
+   "id": "phantom",
+   "name": "Das Phantom",
+   "title": "Boss der Elite-Liga",
+   "league": 4,
+   "boss": true,
+   "archetype": "Wildcard",
+   "quote": "Hast du mich kommen sehen?",
+   "runPaceSPerKm": 235,
+   "rideKmh": 38,
+   "portrait": null
+  },
+  {
+   "id": "kai",
+   "name": "Kai Komet",
+   "title": "Der Lichtstreif",
+   "league": 5,
+   "boss": false,
+   "archetype": "Sprinter",
+   "quote": "Bis du blinzelst, bin ich vorbei.",
+   "runPaceSPerKm": 225,
+   "rideKmh": 39,
+   "portrait": null
+  },
+  {
+   "id": "yara",
+   "name": "Yara Zenit",
+   "title": "Die Unerreichbare",
+   "league": 5,
+   "boss": false,
+   "archetype": "Maschine",
+   "quote": "Perfektion ist kein Ziel. Sie ist Routine.",
+   "runPaceSPerKm": 215,
+   "rideKmh": 40,
+   "portrait": null
+  },
+  {
+   "id": "juno",
+   "name": "Juno Jäger",
+   "title": "Der Schatten",
+   "league": 5,
+   "boss": false,
+   "archetype": "Konterläufer",
+   "quote": "Ich bin direkt hinter dir.",
+   "runPaceSPerKm": 205,
+   "rideKmh": 41,
+   "portrait": null
+  },
+  {
+   "id": "nullzeit",
+   "name": "Nullzeit",
+   "title": "Der letzte Ghost",
+   "league": 5,
+   "boss": true,
+   "archetype": "Konterläufer",
+   "quote": "Niemand hat mich je gesehen. Nur meine Zeit.",
+   "runPaceSPerKm": 190,
+   "rideKmh": 42.5,
+   "portrait": null
+  }
+ ]
+}

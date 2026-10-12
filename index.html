@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ghostrun</title>
-  <meta name="description" content="Lauf gegen deinen Ghost: Wähle eine Strecke, such dir einen Gegner aus der Rangliste und lauf gegen seine Aufzeichnung.">
+  <meta name="description" content="Lauf gegen deinen Ghost: Wähle eine Strecke, such dir einen Gegner aus der Rangliste oder einen Rivalen und lauf gegen seine Aufzeichnung.">
   <meta name="theme-color" content="#0A0D0F">
   <meta property="og:title" content="Ghostrun – Lauf gegen deinen Ghost">
-  <meta property="og:description" content="Echte Strecken, echte Zeiten. Ghostrun zeigt und sagt dir live, ob du vorne liegst.">
+  <meta property="og:description" content="Echte Strecken, echte Zeiten, 20 Rivalen in 5 Ligen. Ghostrun zeigt und sagt dir live, ob du vorne liegst.">
   <meta property="og:image" content="https://ghostrun.de/assets/ghost.png">
   <link rel="icon" href="/assets/icon.png">
   <link rel="apple-touch-icon" href="/assets/icon.png">
@@ -18,9 +18,9 @@
     <div class="in">
       <a class="brand" href="/"><img src="/assets/ghost.png" alt=""><span>GHOSTRUN</span></a>
       <nav class="nav" aria-label="Hauptnavigation">
-        <a href="#so-gehts">So geht's</a>
-        <a href="#funktionen">Funktionen</a>
-        <a class="btn secondary" href="/login/">Anmelden</a>
+        <a href="#rennen">Rennen</a>
+        <a href="#startfeld">Rivalen</a>
+        <a class="btn secondary" href="/login/" id="nav-account">Anmelden</a>
       </nav>
     </div>
   </header>
@@ -28,157 +28,122 @@
   <main class="page">
     <section class="hero">
       <div>
-        <h1>Lauf gegen<br>deinen <em>Ghost.</em></h1>
-        <p class="lead">Wähle eine Strecke, such dir einen Gegner aus der Rangliste und lauf gegen seine Aufzeichnung. Ghostrun zeigt und sagt dir live, ob du vorne liegst.</p>
+        <p class="label">Lauf · Rad · Ghost-Rennen</p>
+        <h1>Lauf<br>gegen<br>deinen <span class="outline">Ghost.</span></h1>
+        <p class="lead">Wähle eine Strecke, such dir einen Gegner aus und lauf gegen seine Aufzeichnung. Du siehst und hörst live, ob du vorne liegst.</p>
         <div class="ctas">
-          <a class="btn primary" href="/login/#registrieren">Konto erstellen</a>
-          <a class="btn secondary" href="#so-gehts">So geht's</a>
+          <a class="btn primary" href="/login/#registrieren">Startnummer holen</a>
+          <a class="btn secondary" href="#rennen">Rennen ansehen</a>
         </div>
-        <p class="soon">Bald für iPhone und Android. Zum Laufen und Radfahren.</p>
+        <p class="soon small muted">Bald für iPhone und Android.</p>
       </div>
 
-      <div class="hero-visual" aria-hidden="true">
-        <div class="phone">
-          <div class="status"><span class="num">7:51</span><span>●●● 5G</span></div>
-          <div class="map">
-            <svg viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice">
-              <defs>
-                <radialGradient id="hg"><stop offset="0" stop-color="#00E5CC" stop-opacity=".5"/><stop offset="1" stop-color="#00E5CC" stop-opacity="0"/></radialGradient>
-                <linearGradient id="ht" x1="0" x2="1"><stop offset="0" stop-color="#00E5CC" stop-opacity="0"/><stop offset="1" stop-color="#00E5CC" stop-opacity=".7"/></linearGradient>
-              </defs>
-              <rect width="300" height="300" fill="#0E1215"/>
-              <g stroke="#1A2024" stroke-width="10" fill="none"><path d="M-10 60 L310 40"/><path d="M-10 230 L310 250"/><path d="M80 -10 L60 310"/><path d="M230 -10 L250 310"/></g>
-              <g stroke="#232B30" stroke-width="16" fill="none"><path d="M-10 150 Q150 130 310 160"/></g>
-              <rect x="120" y="175" width="70" height="45" rx="6" fill="#111A17"/>
-              <path d="M20 250 C 80 230, 120 180, 160 150 S 250 90, 290 40" fill="none" stroke="#00E5CC" stroke-opacity=".35" stroke-width="4" stroke-linecap="round"/>
-              <path d="M20 250 C 80 230, 120 180, 160 150 S 200 120, 214 112" fill="none" stroke="#F2F6F7" stroke-opacity=".7" stroke-width="4" stroke-linecap="round"/>
-              <g class="ghost-dot">
-                <path d="M150 158 C 160 150, 170 142, 178 136" fill="none" stroke="url(#ht)" stroke-width="5" stroke-linecap="round"/>
-                <circle cx="182" cy="133" r="20" fill="url(#hg)"/>
-                <circle cx="182" cy="133" r="8" fill="rgba(0,229,204,.55)" stroke="#00E5CC" stroke-width="2"/>
-              </g>
-              <circle cx="214" cy="112" r="14" fill="rgba(242,246,247,.12)"/>
-              <circle cx="214" cy="112" r="7" fill="#FFFFFF" stroke="#0A0D0F" stroke-width="2.5"/>
-            </svg>
-            <div class="seg"><span class="on">2D</span><span>AR</span></div>
+      <!-- Interactive race: drag the slider or press play. Numbers come from site.js. -->
+      <figure class="race" id="rennen" aria-label="Beispielrennen gegen einen Ghost">
+        <div class="race-top">
+          <span class="label live"><i id="race-live"></i>Stadtparkrunde · 3,00 km</span>
+          <span class="label" id="race-clock">00:00</span>
+        </div>
+        <div class="race-map">
+          <svg viewBox="0 0 400 250" role="img" aria-label="Strecke mit dir und dem Ghost">
+            <defs>
+              <pattern id="streets" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M40 0H0V40" fill="none" stroke="#1A2024" stroke-width="1"/>
+              </pattern>
+            </defs>
+            <rect width="400" height="250" fill="url(#streets)"/>
+            <path id="race-route" d="M60 190 C 40 120, 90 50, 170 60 S 300 40, 340 90 S 350 200, 280 205 S 170 170, 140 210 S 80 230, 60 190 Z"
+              fill="none" stroke="#00E5CC" stroke-opacity=".35" stroke-width="5" stroke-linecap="round"/>
+            <path id="race-done" fill="none" stroke="#F2F6F7" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="60" cy="190" r="13" fill="rgba(0,229,204,.12)" stroke="#00E5CC" stroke-width="2"/>
+            <g id="race-ghost"><circle r="15" fill="#00E5CC" opacity=".22"/><circle r="7" fill="rgba(0,229,204,.6)" stroke="#00E5CC" stroke-width="2"/></g>
+            <g id="race-me"><circle r="7" fill="#FFFFFF" stroke="#0A0D0F" stroke-width="2.5"/></g>
+          </svg>
+        </div>
+        <div class="race-board">
+          <div>
+            <span class="label">Abstand</span>
+            <div class="race-gap" id="race-gap" aria-live="off">±0<small> s</small></div>
+            <span class="label" id="race-word">gleichauf</span>
           </div>
-          <div class="sheet">
-            <div class="gap-row"><span class="gap">+8<small>s</small></span><span class="gap-txt"><b>Vorne</b><span>+31 m</span></span></div>
-            <div class="prog">
-              <div class="track"></div><div class="fill" style="width:62%"></div>
-              <div class="m gh" style="left:58%"></div><div class="m me" style="left:62%"></div>
-            </div>
-            <div class="stats">
-              <div><span class="label">Zeit</span><span class="v">7:14</span></div>
-              <div><span class="label">Pace</span><span class="v">4:52</span></div>
-              <div><span class="label">Rest km</span><span class="v">0,91</span></div>
-            </div>
+          <div>
+            <span class="label">Distanz</span>
+            <div class="race-val" id="race-dist">0,00</div>
+            <span class="label">von 3 km</span>
+          </div>
+          <div>
+            <span class="label">Abstand</span>
+            <div class="race-val" id="race-meters">0 m</div>
+            <span class="label">zum Ghost</span>
           </div>
         </div>
-      </div>
+        <div class="race-controls">
+          <button type="button" id="race-play" aria-label="Abspielen">
+            <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path id="race-play-icon" d="M4 2l10 6-10 6z" fill="currentColor"/></svg>
+          </button>
+          <input type="range" id="race-scrub" min="0" max="1000" value="0" aria-label="Zeit im Rennen">
+        </div>
+      </figure>
     </section>
 
     <section class="section" id="so-gehts">
       <div class="section-head">
-        <span class="label">So geht's</span>
-        <h2>Drei Schritte bis zum Rennen</h2>
+        <span class="no">01</span>
+        <div>
+          <h2>So läuft ein Rennen</h2>
+          <p>Keine Startzeit, kein Countdown. Du läufst los, wann du willst, der Ghost startet mit dir.</p>
+        </div>
       </div>
-      <div class="steps">
-        <article class="step">
-          <div class="visual" aria-hidden="true">
-            <svg viewBox="0 0 320 240" preserveAspectRatio="xMidYMid slice">
-              <rect width="320" height="240" fill="#0E1215"/>
-              <g stroke="#1A2024" stroke-width="10" fill="none"><path d="M-10 60 L330 40"/><path d="M-10 190 L330 205"/><path d="M90 -10 L70 250"/><path d="M250 -10 L240 250"/></g>
-              <path d="M160 60 C 220 55, 270 95, 255 140 S 190 215, 125 205 S 60 150, 95 110 S 130 65, 160 60" fill="none" stroke="#00E5CC" stroke-opacity=".5" stroke-width="3.5" stroke-linecap="round"/>
-              <circle class="pulse" cx="160" cy="60" r="24" fill="none" stroke="#00E5CC" stroke-width="1.5"/>
-              <circle cx="160" cy="60" r="24" fill="rgba(0,229,204,.12)" stroke="#00E5CC" stroke-width="2.5"/>
-              <path d="M160 215 L162 160 Q166 110 162 92" fill="none" stroke="#F2F6F7" stroke-opacity=".3" stroke-width="1.5" stroke-dasharray="3 5"/>
-              <circle cx="160" cy="222" r="7" fill="#FFFFFF" stroke="#0A0D0F" stroke-width="2.5"/>
-              <rect x="186" y="44" width="92" height="28" rx="14" fill="rgba(19,24,27,.92)" stroke="#1C2327"/>
-              <text x="232" y="63" text-anchor="middle" fill="#F2F6F7" font-family="Barlow Condensed, sans-serif" font-weight="700" font-size="15" letter-spacing="1">START 34 M</text>
-            </svg>
-          </div>
-          <div class="text">
-            <span class="n">01</span>
-            <h3>Strecke in der Nähe finden</h3>
-            <p>Auf der Karte siehst du Strecken, die andere schon gelaufen oder gefahren sind. Geh zum Startkreis.</p>
-          </div>
-        </article>
-
-        <article class="step">
-          <div class="visual" aria-hidden="true">
-            <div class="board">
-              <div class="row"><span class="rk">1</span><span class="nm">Lena</span><span class="tm">12:31</span></div>
-              <div class="row pick"><span class="rk">2</span><span class="nm">Tom</span><span class="tm">12:58</span></div>
-              <div class="row"><span class="rk">3</span><span class="nm">Du</span><span class="tm">13:22</span></div>
-              <div class="row"><span class="rk">4</span><span class="nm">Mia</span><span class="tm">14:05</span></div>
-            </div>
-          </div>
-          <div class="text">
-            <span class="n">02</span>
-            <h3>Ghost wählen</h3>
-            <p>Den Streckenrekord, deine eigene Bestzeit oder irgendeinen Eintrag aus der Rangliste.</p>
-          </div>
-        </article>
-
-        <article class="step">
-          <div class="visual" aria-hidden="true">
-            <div class="gapcard">
-              <span class="big">+8<small>s</small></span>
-              <span class="word">Vorne</span>
-              <span class="sub">+31 m · noch 0,91 km</span>
-            </div>
-          </div>
-          <div class="text">
-            <span class="n">03</span>
-            <h3>Lauf los</h3>
-            <p>Die Zeit startet, sobald du die Startlinie überquerst. Ab dann siehst du jede Sekunde, wie weit du vorne oder hinten liegst.</p>
-          </div>
-        </article>
-      </div>
+      <table class="splits">
+        <thead><tr><th>Split</th><th>Was</th><th>Wie</th><th></th></tr></thead>
+        <tbody>
+          <tr><td class="no">01</td><td class="what">Strecke wählen</td><td class="how">Strecken in deiner Nähe auf der Karte, gelaufen von anderen. Oder mach aus deinem eigenen Lauf eine neue Strecke.</td><td class="mark muted">400 m – 50 km</td></tr>
+          <tr><td class="no">02</td><td class="what">Gegner wählen</td><td class="how">Streckenrekord, deine Bestzeit, irgendwer aus der Rangliste oder einer der Rivalen, die auf der Strecke lauern.</td><td class="mark ahead">Ghost</td></tr>
+          <tr><td class="no">03</td><td class="what">In den Startkreis</td><td class="how">Stell dich in den leuchtenden Kreis am Start und tippe „Bereit“. Die Zeit läuft ab der Startlinie.</td><td class="mark muted">25 m</td></tr>
+          <tr><td class="no">04</td><td class="what">Rennen</td><td class="how">Großer Abstand in Sekunden, Ansagen bei jedem Führungswechsel und alle 500 m. Musik wird nur kurz leiser.</td><td class="mark"><span class="ahead">+8 s</span> / <span class="behind">−5 s</span></td></tr>
+          <tr><td class="no">05</td><td class="what">Ziel</td><td class="how">Deine Zeit kommt in die Rangliste. Ab jetzt bist du selbst der Ghost, gegen den andere laufen.</td><td class="mark">Platz 1?</td></tr>
+        </tbody>
+      </table>
     </section>
 
-    <section class="section" id="funktionen">
+    <section class="section" id="startfeld">
       <div class="section-head">
-        <span class="label">Funktionen</span>
-        <h2>Gebaut für draußen</h2>
+        <span class="no">02</span>
+        <div>
+          <h2>Das Startfeld</h2>
+          <p>Niemand in deiner Gegend? Dann laufen Rivalen gegen dich. 20 Charaktere in 5 Ligen, jeder mit eigenem Lauftyp. Besiegst du den Boss, steigst du auf.</p>
+        </div>
       </div>
-      <div class="features">
-        <article class="feature">
-          <h3>Ansagen im Ohr</h3>
-          <p>Du musst nicht aufs Handy schauen. Ghostrun sagt dir bei jedem Führungswechsel und alle 500 Meter, wie es steht. Deine Musik wird dabei nur kurz leiser.</p>
-          <div class="quote">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/></svg>
-            <span>„Noch 1,5 Kilometer. Du liegst 12 Sekunden vorne.“</span>
-          </div>
-        </article>
-        <article class="feature">
-          <h3>Laufen und Rad</h3>
-          <p>Jede Strecke gehört zu einer Sportart und hat ihre eigene Rangliste. Läufer treten gegen Läufer an, Radfahrer gegen Radfahrer.</p>
-          <div class="split"><span>min/km</span><span>km/h</span></div>
-        </article>
-        <article class="feature">
-          <h3>Ghost im Kamerabild</h3>
-          <p>Im optionalen AR-Modus läuft der Ghost als leuchtende Figur vor dir auf der Strecke. Die normale Kartenansicht funktioniert immer.</p>
-        </article>
-        <article class="feature">
-          <h3>Jeder Lauf wird zum Ghost</h3>
-          <p>Deine Läufe werden aufgezeichnet, auch bei gesperrtem Bildschirm. Aus jedem kannst du eine neue Strecke machen, gegen die andere dann antreten.</p>
-        </article>
-      </div>
+      <div class="field-filter" id="field-filter" role="group" aria-label="Liga auswählen"></div>
+      <div class="lineup" id="lineup"></div>
     </section>
 
-    <section class="cta-band">
-      <h2>Bereit für deinen ersten Ghost?</h2>
-      <a class="btn primary" href="/login/#registrieren">Konto erstellen</a>
+    <section class="section" id="draussen">
+      <div class="section-head">
+        <span class="no">03</span>
+        <div><h2>Gebaut für draußen</h2></div>
+      </div>
+      <dl class="spec">
+        <div><dt>Bildschirm aus</dt><dd>Die Aufzeichnung läuft weiter, wenn das Handy in der Tasche ist. Jeder Punkt wird sofort gespeichert.</dd></div>
+        <div><dt>Ohne Netz</dt><dd>Läufe bleiben auf dem Handy und werden hochgeladen, sobald du wieder Empfang hast.</dd></div>
+        <div><dt>Ansagen</dt><dd>„Noch 1,5 Kilometer. Du liegst 12 Sekunden vorne.“ Auf Deutsch, bei Führungswechsel und alle 500 Meter.</dd></div>
+        <div><dt>Fair</dt><dd>Zeiten werden auf dem Server geprüft. Wer zu schnell ist oder abkürzt, kommt nicht in die Rangliste.</dd></div>
+        <div><dt>Laufen &amp; Rad</dt><dd>Strikt getrennte Strecken und Ranglisten. Pace in min/km, auf dem Rad km/h.</dd></div>
+        <div><dt>Deine Daten</dt><dd>Server in Frankfurt, kein Tracking, keine Werbung. Konto jederzeit in der App löschbar.</dd></div>
+      </dl>
+    </section>
+
+    <section class="finish">
+      <h2>Auf die<br>Plätze.</h2>
+      <a class="btn primary" href="/login/#registrieren">Startnummer holen</a>
     </section>
   </main>
 
   <footer class="site-footer">
     <a class="brand" href="/"><img src="/assets/ghost.png" alt=""><span>GHOSTRUN</span></a>
-    <a href="/login/">Anmelden</a>
     <a href="/datenschutz/">Datenschutz</a>
     <a href="/impressum/">Impressum</a>
   </footer>
+  <script src="/assets/site.js"></script>
 </body>
 </html>

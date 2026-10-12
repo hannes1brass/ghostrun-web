@@ -1,17 +1,11 @@
 // Login page. Same flow and rules as the app (src/auth/*), plus Google sign-in.
-// The publishable key is meant to be public; RLS protects the data.
+// Signed in, it forwards to the personal page (/du/).
 (function () {
   'use strict';
 
-  const SUPABASE_URL = 'https://mrxylbwvetmeyruqlglp.supabase.co';
-  const PUBLISHABLE_KEY = 'sb_publishable_OjiYXgKzG9k6A20s7tQofA_DQIEfny9';
   const OTP_LENGTH = 6;
   const RESEND_COOLDOWN_S = 60;
-
-  // PKCE: Google redirects back with ?code=..., which supabase-js exchanges for a session.
-  const client = window.supabase.createClient(SUPABASE_URL, PUBLISHABLE_KEY, {
-    auth: { flowType: 'pkce', detectSessionInUrl: true, persistSession: true },
-  });
+  const client = window.ghostrunClient;
 
   // --- Rules and messages (same as src/auth/validation.ts and errors.ts) ---
 
@@ -56,7 +50,7 @@
   // --- Views ---
 
   const $ = (id) => document.getElementById(id);
-  const VIEWS = ['entry', 'code', 'forgot', 'newpw', 'account', 'loading'];
+  const VIEWS = ['entry', 'code', 'forgot', 'newpw', 'loading'];
   function show(name) {
     for (const v of VIEWS) $('view-' + v).hidden = v !== name;
     const first = $('view-' + name).querySelector('form:not([hidden]) input, input');
@@ -256,21 +250,16 @@
     });
   });
 
-  $('signout').addEventListener('click', () => client.auth.signOut());
-
   // --- Session ---
 
   function render(session) {
     if (recovering) return;
     if (!session) {
-      if (!$('view-account').hidden || !$('view-loading').hidden) show('entry');
+      if (!$('view-loading').hidden) show('entry');
       return;
     }
-    const meta = session.user.user_metadata || {};
-    $('me-name').textContent = meta.display_name || meta.full_name || meta.name || '';
-    $('me-email').textContent = session.user.email || '';
-    show('account');
-    if (location.search) history.replaceState(null, '', location.pathname);
+    show('loading');
+    location.replace('/du/');
   }
 
   client.auth.onAuthStateChange((_event, session) => {

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ghostrun · Mein Bereich</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0A0D0F">
+  <link rel="icon" href="/assets/icon.png">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="in">
+      <a class="brand" href="/"><img src="/assets/ghost.png" alt=""><span>GHOSTRUN</span></a>
+      <nav class="nav" aria-label="Hauptnavigation">
+        <a href="#laeufe">Läufe</a>
+        <a href="#rivalen">Rivalen</a>
+        <button class="btn secondary" type="button" id="signout">Abmelden</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <p class="muted" id="loading" style="padding: 48px 0" aria-live="polite">Lade deine Läufe …</p>
+    <p class="error" id="load-error" style="padding: 48px 0" aria-live="assertive"></p>
+
+    <div class="dash" id="dash" hidden>
+      <section class="dash-head">
+        <div class="bib" aria-label="Deine Startnummer">
+          <div class="bib-top"><span>Ghostrun</span><span id="bib-season"></span></div>
+          <div class="bib-no" id="bib-no"></div>
+          <div class="bib-name" id="bib-name"></div>
+          <span class="pins-bottom" aria-hidden="true"></span>
+          <div class="bib-strip" id="bib-strip"></div>
+        </div>
+        <div class="who">
+          <span class="label" id="since"></span>
+          <h1 id="hello"></h1>
+          <span class="chip" id="league-chip"></span>
+        </div>
+      </section>
+
+      <section class="totals" aria-label="Gesamt">
+        <div><span class="label">Distanz</span><div class="big" id="t-distance"></div></div>
+        <div><span class="label">Aktivitäten</span><div class="big" id="t-count"></div></div>
+        <div><span class="label">In Bewegung</span><div class="big" id="t-time"></div></div>
+        <div><span class="label">Ruhm</span><div class="big" id="t-fame"></div></div>
+      </section>
+
+      <section>
+        <div class="block-head"><h2>Letzte 12 Wochen</h2><span class="label">km pro Woche</span></div>
+        <div class="weeks" id="weeks"></div>
+      </section>
+
+      <section id="laeufe">
+        <div class="block-head"><h2>Läufe</h2><span class="label" id="runs-count"></span></div>
+        <div id="runs"></div>
+      </section>
+
+      <section>
+        <div class="block-head"><h2>Bestzeiten</h2><span class="label">deine Strecken-Ranglisten</span></div>
+        <div id="pbs"></div>
+      </section>
+
+      <section class="two" id="rivalen">
+        <div>
+          <div class="block-head"><h2>Rivalen</h2><span class="label" id="rivals-count"></span></div>
+          <div class="rival-grid" id="rival-grid"></div>
+          <p class="small muted" style="margin-top: 14px">Rivalen lauern auf Strecken. Besiege sie in der App, dann landen sie hier.</p>
+        </div>
+        <div>
+          <div class="block-head"><h2>Ruhm</h2><span class="label">diese Woche</span></div>
+          <div class="fame" id="fame"></div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand" href="/"><img src="/assets/ghost.png" alt=""><span>GHOSTRUN</span></a>
+    <a href="/datenschutz/">Datenschutz</a>
+    <a href="/impressum/">Impressum</a>
+  </footer>
+  <script src="/assets/vendor/supabase-2.117.3.js"></script>
+  <script src="/assets/client.js"></script>
+  <script src="/assets/dashboard.js"></script>
+</body>
+</html>
