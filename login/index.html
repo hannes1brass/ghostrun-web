@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Ghostrun Anmelden</title>
+  <meta name="theme-color" content="#0A0D0F">
+  <link rel="icon" href="/assets/icon.png">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="in">
+      <a class="brand" href="/"><img src="/assets/ghost.png" alt=""><span>GHOSTRUN</span></a>
+    </div>
+  </header>
+
+  <main class="auth">
+    <!-- Anmelden / Registrieren -->
+    <section id="view-entry" class="stack">
+      <h1 id="entry-title">Willkommen zurück</h1>
+      <button class="btn google" id="google" type="button">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+        Mit Google anmelden
+      </button>
+      <div class="divider">oder mit E-Mail</div>
+      <div class="tabs" role="tablist">
+        <button type="button" role="tab" id="tab-signin" aria-selected="true">Anmelden</button>
+        <button type="button" role="tab" id="tab-signup" aria-selected="false">Registrieren</button>
+      </div>
+
+      <form id="form-signin" class="stack" novalidate>
+        <div class="field"><label class="label" for="si-email">E-Mail</label><input id="si-email" type="email" autocomplete="username" required></div>
+        <div class="field"><label class="label" for="si-password">Passwort</label><input id="si-password" type="password" autocomplete="current-password" required></div>
+        <p class="error" role="alert"></p>
+        <button class="btn primary" type="submit">Anmelden</button>
+        <button class="link" data-go="forgot" type="button">Passwort vergessen?</button>
+      </form>
+
+      <form id="form-signup" class="stack" hidden novalidate>
+        <div class="field"><label class="label" for="su-name">Anzeigename</label><input id="su-name" autocomplete="nickname" required></div>
+        <div class="field"><label class="label" for="su-email">E-Mail</label><input id="su-email" type="email" autocomplete="email" required></div>
+        <div class="field"><label class="label" for="su-password">Passwort</label><input id="su-password" type="password" autocomplete="new-password" required></div>
+        <p class="small muted">Mindestens 8 Zeichen, mit Buchstaben und Ziffern. Dein Name erscheint in den Ranglisten.</p>
+        <p class="error" role="alert"></p>
+        <button class="btn primary" type="submit">Konto erstellen</button>
+      </form>
+      <p class="error" id="oauth-error" role="alert"></p>
+    </section>
+
+    <!-- Code eingeben (Registrierung und Passwort-Reset) -->
+    <form id="view-code" class="stack" hidden novalidate>
+      <h1>Code eingeben</h1>
+      <p class="muted" id="code-intro"></p>
+      <div class="code" id="code-boxes" role="group" aria-label="Bestätigungscode, 6 Ziffern"></div>
+      <p class="error" role="alert"></p>
+      <p class="info" aria-live="polite"></p>
+      <button class="btn primary" type="submit">Bestätigen</button>
+      <button class="link" id="resend" type="button">Code erneut senden</button>
+      <p class="small muted" style="text-align:center">Keine E-Mail? Schau auch im Spam-Ordner nach.</p>
+      <button class="link" data-go="entry" type="button">Zurück</button>
+    </form>
+
+    <!-- Passwort vergessen -->
+    <form id="view-forgot" class="stack" hidden novalidate>
+      <h1>Passwort vergessen</h1>
+      <p class="muted">Gib deine E-Mail-Adresse ein. Wir schicken dir einen Code zum Zurücksetzen.</p>
+      <div class="field"><label class="label" for="fp-email">E-Mail</label><input id="fp-email" type="email" autocomplete="email" required></div>
+      <p class="error" role="alert"></p>
+      <button class="btn primary" type="submit">Code senden</button>
+      <button class="link" data-go="entry" type="button">Zurück</button>
+    </form>
+
+    <!-- Neues Passwort -->
+    <form id="view-newpw" class="stack" hidden novalidate>
+      <h1>Neues Passwort</h1>
+      <p class="muted">Mindestens 8 Zeichen, mit Buchstaben und Ziffern.</p>
+      <div class="field"><label class="label" for="np-password">Neues Passwort</label><input id="np-password" type="password" autocomplete="new-password" required></div>
+      <p class="error" role="alert"></p>
+      <button class="btn primary" type="submit">Passwort speichern</button>
+    </form>
+
+    <!-- Angemeldet -->
+    <section id="view-account" class="stack" hidden>
+      <h1>Du bist dabei</h1>
+      <div class="card">
+        <span class="label">Angemeldet als</span>
+        <strong id="me-name"></strong>
+        <span class="muted" id="me-email"></span>
+      </div>
+      <p class="muted">Die App kommt bald für iPhone und Android. Dann meldest du dich dort mit diesem Konto an.</p>
+      <button class="btn secondary" id="signout" type="button">Abmelden</button>
+    </section>
+
+    <!-- Lädt -->
+    <section id="view-loading" class="stack" aria-live="polite">
+      <p class="muted">Einen Moment …</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand" href="/"><img src="/assets/ghost.png" alt=""><span>GHOSTRUN</span></a>
+    <a href="/datenschutz/">Datenschutz</a>
+    <a href="/impressum/">Impressum</a>
+  </footer>
+
+  <script src="/assets/vendor/supabase-2.117.3.js"></script>
+  <script src="/assets/auth.js"></script>
+</body>
+</html>
