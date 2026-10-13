@@ -105,8 +105,8 @@ h1, h2 { text-wrap: balance; }
 /* ---------- Landing ---------- */
 .page { max-width: 1120px; margin: 0 auto; }
 .hero { display: grid; grid-template-columns: 1.15fr .85fr; gap: 56px; align-items: center; padding: 64px 0 96px; }
-.swarm { display: flex; gap: 8px; color: var(--lime); margin-bottom: 24px; }
-.swarm .gap { width: 24px; }
+.ghost-mark { display: block; width: 112px; height: auto; fill: var(--lime); shape-rendering: crispEdges; margin-bottom: 32px; }
+@media (max-width: 640px) { .ghost-mark { width: 84px; } }
 .hero h1 { font: 500 clamp(56px, 9vw, 112px)/.92 var(--sans); letter-spacing: -.045em; text-transform: uppercase; }
 .hero .lead { margin-top: 24px; max-width: 40ch; }
 .hero .ctas { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 32px; }
