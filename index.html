@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ghostrun</title>
   <meta name="description" content="Lauf gegen deinen Ghost: Wähle eine Strecke, such dir einen Gegner aus der Rangliste und lauf gegen seine Aufzeichnung.">
-  <meta name="theme-color" content="#0A0D0F">
+  <meta name="theme-color" content="#2b2b2b">
   <meta property="og:title" content="Ghostrun – Lauf gegen deinen Ghost">
   <meta property="og:description" content="Echte Strecken, echte Zeiten. Ghostrun zeigt und sagt dir live, ob du vorne liegst.">
-  <meta property="og:image" content="https://ghostrun.de/assets/ghost.png">
+  <meta property="og:image" content="https://ghostrun.de/assets/icon.png">
   <link rel="icon" href="/assets/icon.png">
   <link rel="apple-touch-icon" href="/assets/icon.png">
   <link rel="stylesheet" href="/assets/style.css">
@@ -16,11 +16,11 @@
 <body>
   <header class="site-header">
     <div class="in">
-      <a class="brand" href="/"><img src="/assets/ghost.png" alt=""><span>GHOSTRUN</span></a>
+      <a class="brand" href="/"><svg class="px" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 0h4v1h-4zM5 1h4v1h-4zM4 2h4v1h-4zM3 3h4v1h-4zM2 4h9v1h-9zM1 5h9v1h-9zM5 6h4v1h-4zM4 7h4v1h-4zM3 8h4v1h-4zM2 9h3v1h-3zM1 10h2v1h-2z"/></svg><span>GHOSTRUN</span></a>
       <nav class="nav" aria-label="Hauptnavigation">
         <a href="#so-gehts">So geht's</a>
         <a href="#funktionen">Funktionen</a>
-        <a class="btn secondary" href="/login/">Anmelden</a>
+        <a class="btn primary" href="/login/">Anmelden</a>
       </nav>
     </div>
   </header>
@@ -28,46 +28,38 @@
   <main class="page">
     <section class="hero">
       <div>
-        <h1>Lauf gegen<br>deinen <em>Ghost.</em></h1>
-        <p class="lead">Wähle eine Strecke, such dir einen Gegner aus der Rangliste und lauf gegen seine Aufzeichnung. Ghostrun zeigt und sagt dir live, ob du vorne liegst.</p>
+        <div class="swarm" aria-hidden="true"><svg class="px" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 0h4v1h-4zM5 1h4v1h-4zM4 2h4v1h-4zM3 3h4v1h-4zM2 4h9v1h-9zM1 5h9v1h-9zM5 6h4v1h-4zM4 7h4v1h-4zM3 8h4v1h-4zM2 9h3v1h-3zM1 10h2v1h-2z"/></svg><span class="gap"></span><svg class="px" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 0h4v1h-4zM5 1h4v1h-4zM4 2h4v1h-4zM3 3h4v1h-4zM2 4h9v1h-9zM1 5h9v1h-9zM5 6h4v1h-4zM4 7h4v1h-4zM3 8h4v1h-4zM2 9h3v1h-3zM1 10h2v1h-2z"/></svg><svg class="px" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 0h4v1h-4zM5 1h4v1h-4zM4 2h4v1h-4zM3 3h4v1h-4zM2 4h9v1h-9zM1 5h9v1h-9zM5 6h4v1h-4zM4 7h4v1h-4zM3 8h4v1h-4zM2 9h3v1h-3zM1 10h2v1h-2z"/></svg></div>
+        <h1>Lauf gegen deinen Ghost</h1>
+        <p class="lead meta">Wähle eine Strecke, such dir einen Gegner aus der Rangliste und lauf gegen seine Aufzeichnung. Ghostrun zeigt und sagt dir live, ob du vorne liegst.</p>
         <div class="ctas">
-          <a class="btn primary" href="/login/#registrieren">Konto erstellen</a>
+          <a class="btn lime" href="/login/#registrieren">Konto erstellen <svg class="px" viewBox="0 0 12 12" aria-hidden="true"><path d="M7 2h1v1h-1zM7 3h2v1h-2zM7 4h3v1h-3zM1 5h10v1h-10zM1 6h10v1h-10zM7 7h3v1h-3zM7 8h2v1h-2zM7 9h1v1h-1z"/></svg></a>
           <a class="btn secondary" href="#so-gehts">So geht's</a>
         </div>
-        <p class="soon">Bald für iPhone und Android. Zum Laufen und Radfahren.</p>
+        <p class="soon label">Bald für iPhone und Android · Laufen und Rad</p>
       </div>
 
       <div class="hero-visual" aria-hidden="true">
         <div class="phone">
-          <div class="status"><span class="num">7:51</span><span>●●● 5G</span></div>
+          <div class="status"><span>7:51</span><span>5G</span></div>
+          <div class="bar">Domrunde</div>
           <div class="map">
-            <svg viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice">
-              <defs>
-                <radialGradient id="hg"><stop offset="0" stop-color="#00E5CC" stop-opacity=".5"/><stop offset="1" stop-color="#00E5CC" stop-opacity="0"/></radialGradient>
-                <linearGradient id="ht" x1="0" x2="1"><stop offset="0" stop-color="#00E5CC" stop-opacity="0"/><stop offset="1" stop-color="#00E5CC" stop-opacity=".7"/></linearGradient>
-              </defs>
-              <rect width="300" height="300" fill="#0E1215"/>
-              <g stroke="#1A2024" stroke-width="10" fill="none"><path d="M-10 60 L310 40"/><path d="M-10 230 L310 250"/><path d="M80 -10 L60 310"/><path d="M230 -10 L250 310"/></g>
-              <g stroke="#232B30" stroke-width="16" fill="none"><path d="M-10 150 Q150 130 310 160"/></g>
-              <rect x="120" y="175" width="70" height="45" rx="6" fill="#111A17"/>
-              <path d="M20 250 C 80 230, 120 180, 160 150 S 250 90, 290 40" fill="none" stroke="#00E5CC" stroke-opacity=".35" stroke-width="4" stroke-linecap="round"/>
-              <path d="M20 250 C 80 230, 120 180, 160 150 S 200 120, 214 112" fill="none" stroke="#F2F6F7" stroke-opacity=".7" stroke-width="4" stroke-linecap="round"/>
+            <svg viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice" shape-rendering="crispEdges">
+              <rect width="300" height="300" fill="#212121"/>
+              <g fill="#363636"><rect x="20" y="20" width="70" height="50"/><rect x="110" y="10" width="90" height="60"/><rect x="220" y="30" width="70" height="80"/><rect x="10" y="100" width="60" height="70"/><rect x="200" y="140" width="90" height="50"/><rect x="100" y="200" width="80" height="60"/><rect x="210" y="220" width="70" height="70"/></g>
+              <path d="M20 260 L60 240 L100 200 L140 170 L170 150 L210 120 L250 80 L290 40" fill="none" stroke="#f4f4ef" stroke-opacity=".35" stroke-width="4" shape-rendering="auto" stroke-linecap="square"/>
+              <path d="M20 260 L60 240 L100 200 L140 170 L170 150 L214 116" fill="none" stroke="#d4ff3a" stroke-width="4" shape-rendering="auto" stroke-linecap="square"/>
               <g class="ghost-dot">
-                <path d="M150 158 C 160 150, 170 142, 178 136" fill="none" stroke="url(#ht)" stroke-width="5" stroke-linecap="round"/>
-                <circle cx="182" cy="133" r="20" fill="url(#hg)"/>
-                <circle cx="182" cy="133" r="8" fill="rgba(0,229,204,.55)" stroke="#00E5CC" stroke-width="2"/>
+                <rect x="166" y="135" width="24" height="24" fill="#8494ff" fill-opacity=".25"/>
+                <rect x="172" y="141" width="12" height="12" fill="#8494ff"/>
               </g>
-              <circle cx="214" cy="112" r="14" fill="rgba(242,246,247,.12)"/>
-              <circle cx="214" cy="112" r="7" fill="#FFFFFF" stroke="#0A0D0F" stroke-width="2.5"/>
+              <rect x="207" y="109" width="14" height="14" fill="#f4f4ef"/>
             </svg>
             <div class="seg"><span class="on">2D</span><span>AR</span></div>
           </div>
           <div class="sheet">
-            <div class="gap-row"><span class="gap">+8<small>s</small></span><span class="gap-txt"><b>Vorne</b><span>+31 m</span></span></div>
-            <div class="prog">
-              <div class="track"></div><div class="fill" style="width:62%"></div>
-              <div class="m gh" style="left:58%"></div><div class="m me" style="left:62%"></div>
-            </div>
+            <div class="gap-row"><span class="gap">+8<small>s</small></span><span class="gap-txt"><b><svg class="px s12" viewBox="0 0 12 12" aria-hidden="true"><path d="M5 1h2v1h-2zM4 2h4v1h-4zM3 3h6v1h-6zM2 4h8v1h-8zM5 5h2v1h-2zM5 6h2v1h-2zM5 7h2v1h-2zM5 8h2v1h-2zM5 9h2v1h-2zM5 10h2v1h-2z"/></svg>Vorne</b><span>+31 M</span></span></div>
+            <div class="prog"><span class="lbl">Du</span><div class="segs"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="prog ghost"><span class="lbl">Lena K.</span><div class="segs"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="stats">
               <div><span class="label">Zeit</span><span class="v">7:14</span></div>
               <div><span class="label">Pace</span><span class="v">4:52</span></div>
@@ -86,16 +78,16 @@
       <div class="steps">
         <article class="step">
           <div class="visual" aria-hidden="true">
-            <svg viewBox="0 0 320 240" preserveAspectRatio="xMidYMid slice">
-              <rect width="320" height="240" fill="#0E1215"/>
-              <g stroke="#1A2024" stroke-width="10" fill="none"><path d="M-10 60 L330 40"/><path d="M-10 190 L330 205"/><path d="M90 -10 L70 250"/><path d="M250 -10 L240 250"/></g>
-              <path d="M160 60 C 220 55, 270 95, 255 140 S 190 215, 125 205 S 60 150, 95 110 S 130 65, 160 60" fill="none" stroke="#00E5CC" stroke-opacity=".5" stroke-width="3.5" stroke-linecap="round"/>
-              <circle class="pulse" cx="160" cy="60" r="24" fill="none" stroke="#00E5CC" stroke-width="1.5"/>
-              <circle cx="160" cy="60" r="24" fill="rgba(0,229,204,.12)" stroke="#00E5CC" stroke-width="2.5"/>
-              <path d="M160 215 L162 160 Q166 110 162 92" fill="none" stroke="#F2F6F7" stroke-opacity=".3" stroke-width="1.5" stroke-dasharray="3 5"/>
-              <circle cx="160" cy="222" r="7" fill="#FFFFFF" stroke="#0A0D0F" stroke-width="2.5"/>
-              <rect x="186" y="44" width="92" height="28" rx="14" fill="rgba(19,24,27,.92)" stroke="#1C2327"/>
-              <text x="232" y="63" text-anchor="middle" fill="#F2F6F7" font-family="Barlow Condensed, sans-serif" font-weight="700" font-size="15" letter-spacing="1">START 34 M</text>
+            <svg class="scene" viewBox="0 0 320 240" preserveAspectRatio="xMidYMid slice">
+              <rect width="320" height="240" fill="#212121"/>
+              <g fill="#2b2b2b"><rect x="20" y="20" width="60" height="40"/><rect x="230" y="160" width="70" height="60"/><rect x="20" y="170" width="70" height="50"/></g>
+              <path d="M160 60 L230 70 L255 130 L200 200 L125 205 L85 140 L110 80 Z" fill="none" stroke="#f4f4ef" stroke-opacity=".5" stroke-width="3"/>
+              <circle class="pulse" cx="160" cy="60" r="24" fill="none" stroke="#d4ff3a" stroke-width="2"/>
+              <circle cx="160" cy="60" r="24" fill="#d4ff3a" fill-opacity=".14" stroke="#d4ff3a" stroke-width="3"/>
+              <path d="M160 215 L160 92" fill="none" stroke="#f4f4ef" stroke-opacity=".35" stroke-width="2" stroke-dasharray="4 6"/>
+              <rect x="153" y="215" width="14" height="14" fill="#f4f4ef"/>
+              <rect x="192" y="46" width="96" height="28" rx="2" fill="#2b2b2b" stroke="#444444"/>
+              <text x="240" y="65" text-anchor="middle" fill="#f4f4ef" font-family="IBM Plex Mono, monospace" font-weight="500" font-size="12" letter-spacing="1">START 34 M</text>
             </svg>
           </div>
           <div class="text">
@@ -117,7 +109,7 @@
           <div class="text">
             <span class="n">02</span>
             <h3>Ghost wählen</h3>
-            <p>Den Streckenrekord, deine eigene Bestzeit oder irgendeinen Eintrag aus der Rangliste.</p>
+            <p>Den Streckenrekord, deine eigene Bestzeit, einen Rivalen oder irgendeinen Eintrag aus der Rangliste.</p>
           </div>
         </article>
 
@@ -125,7 +117,7 @@
           <div class="visual" aria-hidden="true">
             <div class="gapcard">
               <span class="big">+8<small>s</small></span>
-              <span class="word">Vorne</span>
+              <span class="word"><svg class="px s12" viewBox="0 0 12 12" aria-hidden="true"><path d="M5 1h2v1h-2zM4 2h4v1h-4zM3 3h6v1h-6zM2 4h8v1h-8zM5 5h2v1h-2zM5 6h2v1h-2zM5 7h2v1h-2zM5 8h2v1h-2zM5 9h2v1h-2zM5 10h2v1h-2z"/></svg>Vorne</span>
               <span class="sub">+31 m · noch 0,91 km</span>
             </div>
           </div>
@@ -141,27 +133,28 @@
     <section class="section" id="funktionen">
       <div class="section-head">
         <span class="label">Funktionen</span>
-        <h2>Gebaut für draußen</h2>
+        <h2>Gebaut für draußen<span class="sticker"><b>20 Rivalen</b></span></h2>
       </div>
       <div class="features">
         <article class="feature">
+          <svg class="px" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 1h3v1h-3zM6 1h2v1h-2zM1 2h3v1h-3zM6 2h2v1h-2zM1 3h1v1h-1zM4 3h2v1h-2zM8 3h2v1h-2zM1 4h1v1h-1zM4 4h2v1h-2zM8 4h2v1h-2zM1 5h3v1h-3zM6 5h2v1h-2zM1 6h3v1h-3zM6 6h2v1h-2zM1 7h1v1h-1zM1 8h1v1h-1zM1 9h1v1h-1zM1 10h1v1h-1z"/></svg>
           <h3>Ansagen im Ohr</h3>
           <p>Du musst nicht aufs Handy schauen. Ghostrun sagt dir bei jedem Führungswechsel und alle 500 Meter, wie es steht. Deine Musik wird dabei nur kurz leiser.</p>
-          <div class="quote">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/></svg>
-            <span>„Noch 1,5 Kilometer. Du liegst 12 Sekunden vorne.“</span>
-          </div>
+          <div class="quote">„Noch 1,5 Kilometer. Du liegst 12 Sekunden vorne.“</div>
         </article>
         <article class="feature">
+          <svg class="px" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1h6v1h-6zM2 2h8v1h-8zM1 3h10v1h-10zM1 4h1v1h-1zM5 4h2v1h-2zM10 4h1v1h-1zM1 5h1v1h-1zM5 5h2v1h-2zM10 5h1v1h-1zM1 6h4v1h-4zM7 6h4v1h-4zM2 7h3v1h-3zM7 7h3v1h-3zM3 8h6v1h-6zM3 9h1v1h-1zM5 9h2v1h-2zM8 9h1v1h-1zM3 10h6v1h-6z"/></svg>
+          <h3>Rivalen in fünf Ligen</h3>
+          <p>Auch wenn noch niemand in deiner Gegend läuft: 20 Rivalen von Bronze bis Legende lauern auf Strecken und legen eigene Runden direkt bei dir an. Besiege sie, sammle Pokale und steig auf.</p>
+        </article>
+        <article class="feature">
+          <svg class="px" viewBox="0 0 12 12" aria-hidden="true"><path d="M8 1h3v1h-3zM2 2h3v1h-3zM9 2h1v1h-1zM3 3h1v1h-1zM8 3h1v1h-1zM3 4h6v1h-6zM3 5h1v1h-1zM7 5h2v1h-2zM1 6h3v1h-3zM6 6h1v1h-1zM8 6h3v1h-3zM0 7h1v1h-1zM3 7h2v1h-2zM6 7h1v1h-1zM8 7h1v1h-1zM11 7h1v1h-1zM0 8h1v1h-1zM2 8h1v1h-1zM4 8h2v1h-2zM7 8h1v1h-1zM9 8h1v1h-1zM11 8h1v1h-1zM0 9h1v1h-1zM4 9h1v1h-1zM7 9h1v1h-1zM11 9h1v1h-1zM1 10h3v1h-3zM8 10h3v1h-3z"/></svg>
           <h3>Laufen und Rad</h3>
           <p>Jede Strecke gehört zu einer Sportart und hat ihre eigene Rangliste. Läufer treten gegen Läufer an, Radfahrer gegen Radfahrer.</p>
           <div class="split"><span>min/km</span><span>km/h</span></div>
         </article>
         <article class="feature">
-          <h3>Ghost im Kamerabild</h3>
-          <p>Im optionalen AR-Modus läuft der Ghost als leuchtende Figur vor dir auf der Strecke. Die normale Kartenansicht funktioniert immer.</p>
-        </article>
-        <article class="feature">
+          <svg class="px" viewBox="0 0 12 12" aria-hidden="true"><path d="M7 0h2v1h-2zM7 1h2v1h-2zM4 2h5v1h-5zM3 3h2v1h-2zM6 3h3v1h-3zM2 4h2v1h-2zM6 4h4v1h-4zM6 5h2v1h-2zM9 5h2v1h-2zM5 6h4v1h-4zM4 7h2v1h-2zM8 7h2v1h-2zM3 8h2v1h-2zM9 8h2v1h-2zM2 9h2v1h-2zM10 9h1v1h-1zM1 10h2v1h-2z"/></svg>
           <h3>Jeder Lauf wird zum Ghost</h3>
           <p>Deine Läufe werden aufgezeichnet, auch bei gesperrtem Bildschirm. Aus jedem kannst du eine neue Strecke machen, gegen die andere dann antreten.</p>
         </article>
@@ -169,13 +162,13 @@
     </section>
 
     <section class="cta-band">
-      <h2>Bereit für deinen ersten Ghost?</h2>
-      <a class="btn primary" href="/login/#registrieren">Konto erstellen</a>
+      <h2><span class="sprint">Los geht's</span>Bereit für deinen ersten Ghost?</h2>
+      <a class="btn lime" href="/login/#registrieren">Konto erstellen <svg class="px" viewBox="0 0 12 12" aria-hidden="true"><path d="M7 2h1v1h-1zM7 3h2v1h-2zM7 4h3v1h-3zM1 5h10v1h-10zM1 6h10v1h-10zM7 7h3v1h-3zM7 8h2v1h-2zM7 9h1v1h-1z"/></svg></a>
     </section>
   </main>
 
   <footer class="site-footer">
-    <a class="brand" href="/"><img src="/assets/ghost.png" alt=""><span>GHOSTRUN</span></a>
+    <a class="brand" href="/"><svg class="px" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 0h4v1h-4zM5 1h4v1h-4zM4 2h4v1h-4zM3 3h4v1h-4zM2 4h9v1h-9zM1 5h9v1h-9zM5 6h4v1h-4zM4 7h4v1h-4zM3 8h4v1h-4zM2 9h3v1h-3zM1 10h2v1h-2z"/></svg><span>GHOSTRUN</span></a>
     <a href="/login/">Anmelden</a>
     <a href="/datenschutz/">Datenschutz</a>
     <a href="/impressum/">Impressum</a>
