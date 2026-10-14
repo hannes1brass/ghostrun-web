@@ -4,16 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ghostrun</title>
-  <meta name="description" content="Lauf gegen deinen Ghost: Wähle eine Strecke, such dir einen Gegner aus der Rangliste und lauf gegen seine Aufzeichnung.">
+  <meta name="description" content="Lauf gegen deinen Ghost: echte Strecken, Rivalen in fünf Ligen und jede Woche ein Rennen in deiner Stadt. Ghostrun sagt dir live, ob du vorne liegst.">
   <meta name="theme-color" content="#2b2b2b">
   <meta property="og:title" content="Ghostrun – Lauf gegen deinen Ghost">
-  <meta property="og:description" content="Echte Strecken, echte Zeiten. Ghostrun zeigt und sagt dir live, ob du vorne liegst.">
+  <meta property="og:description" content="Echte Strecken, echte Zeiten, 20 Rivalen und jede Woche ein Rennen. Ghostrun zeigt und sagt dir live, ob du vorne liegst.">
   <meta property="og:image" content="https://ghostrun.de/assets/icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="/assets/home.css">
 </head>
 <body>
   <header class="site-header">
@@ -21,150 +22,227 @@
       <a class="brand" href="/"><svg class="px" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 0h4v1h-4zM5 1h4v1h-4zM4 2h4v1h-4zM3 3h4v1h-4zM2 4h9v1h-9zM1 5h9v1h-9zM5 6h4v1h-4zM4 7h4v1h-4zM3 8h4v1h-4zM2 9h3v1h-3zM1 10h2v1h-2z"/></svg><span>GHOSTRUN</span></a>
       <nav class="nav" aria-label="Hauptnavigation">
         <a href="#so-gehts">So geht's</a>
-        <a href="#funktionen">Funktionen</a>
+        <a href="#rivalen">Rivalen</a>
+        <a href="#wochenrennen">Wochenrennen</a>
         <a class="btn primary" href="/login/">Anmelden</a>
       </nav>
     </div>
   </header>
 
-  <main class="page">
+  <main class="home">
+    <!-- Hero: the race screen as in the app -->
     <section class="hero">
-      <div>
-        <svg class="ghost-mark" viewBox="3 5 14 11" aria-hidden="true"><path d="M12 5h4v1h-4zM3 6h6v1h-6zM11 6h6v1h-6zM10 7h3v1h-3zM14 7h1v1h-1zM16 7h1v1h-1zM9 8h4v1h-4zM14 8h1v1h-1zM16 8h1v1h-1zM6 9h2v1h-2zM9 9h8v1h-8zM9 10h8v1h-8zM4 11h3v1h-3zM8 11h8v1h-8zM8 12h8v1h-8zM5 13h2v1h-2zM8 13h8v1h-8zM8 14h8v1h-8zM8 15h2v1h-2zM11 15h2v1h-2zM14 15h2v1h-2z"/></svg>
-        <h1>Lauf gegen deinen Ghost</h1>
-        <p class="lead meta">Wähle eine Strecke, such dir einen Gegner aus der Rangliste und lauf gegen seine Aufzeichnung. Ghostrun zeigt und sagt dir live, ob du vorne liegst.</p>
+      <div class="hero-copy">
+        <span class="pixel-tag">Bald für iPhone und Android</span>
+        <h1 class="display">Lauf gegen<br>deinen <span class="hl">Ghost</span></h1>
+        <p class="meta lead">Echte Strecken, echte Zeiten. Such dir einen Gegner, lauf los und hör live, ob du vorne liegst.</p>
         <div class="ctas">
           <a class="btn lime" href="/login/#registrieren">Konto erstellen <svg class="px" viewBox="0 0 12 12" aria-hidden="true"><path d="M7 2h1v1h-1zM7 3h2v1h-2zM7 4h3v1h-3zM1 5h10v1h-10zM1 6h10v1h-10zM7 7h3v1h-3zM7 8h2v1h-2zM7 9h1v1h-1z"/></svg></a>
           <a class="btn secondary" href="#so-gehts">So geht's</a>
         </div>
-        <p class="soon label">Bald für iPhone und Android · Laufen und Rad</p>
+        <ul class="facts label">
+          <li><b class="digits">20</b> Rivalen</li>
+          <li><b class="digits">5</b> Ligen</li>
+          <li><b class="digits">1</b> Rennen pro Woche</li>
+        </ul>
       </div>
 
       <div class="hero-visual" aria-hidden="true">
         <div class="phone">
-          <div class="status"><span>7:51</span><span>5G</span></div>
-          <div class="bar">Domrunde</div>
-          <div class="map">
-            <svg viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice" shape-rendering="crispEdges">
-              <rect width="300" height="300" fill="#212121"/>
-              <g fill="#363636"><rect x="20" y="20" width="70" height="50"/><rect x="110" y="10" width="90" height="60"/><rect x="220" y="30" width="70" height="80"/><rect x="10" y="100" width="60" height="70"/><rect x="200" y="140" width="90" height="50"/><rect x="100" y="200" width="80" height="60"/><rect x="210" y="220" width="70" height="70"/></g>
-              <path d="M20 260 L60 240 L100 200 L140 170 L170 150 L210 120 L250 80 L290 40" fill="none" stroke="#f4f4ef" stroke-opacity=".35" stroke-width="4" shape-rendering="auto" stroke-linecap="square"/>
-              <path d="M20 260 L60 240 L100 200 L140 170 L170 150 L214 116" fill="none" stroke="#d4ff3a" stroke-width="4" shape-rendering="auto" stroke-linecap="square"/>
-              <g class="ghost-dot">
-                <rect x="166" y="135" width="24" height="24" fill="#8494ff" fill-opacity=".25"/>
-                <rect x="172" y="141" width="12" height="12" fill="#8494ff"/>
-              </g>
-              <rect x="207" y="109" width="14" height="14" fill="#f4f4ef"/>
-            </svg>
-            <div class="seg"><span class="on">2D</span><span>AR</span></div>
-          </div>
-          <div class="sheet">
-            <div class="gap-row"><span class="gap">+8<small>s</small></span><span class="gap-txt"><b><svg class="px s12" viewBox="0 0 12 12" aria-hidden="true"><path d="M5 1h2v1h-2zM4 2h4v1h-4zM3 3h6v1h-6zM2 4h8v1h-8zM5 5h2v1h-2zM5 6h2v1h-2zM5 7h2v1h-2zM5 8h2v1h-2zM5 9h2v1h-2zM5 10h2v1h-2z"/></svg>Vorne</b><span>+31 M</span></span></div>
-            <div class="prog"><span class="lbl">Du</span><div class="segs"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="prog ghost"><span class="lbl">Lena K.</span><div class="segs"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="stats">
-              <div><span class="label">Zeit</span><span class="v">7:14</span></div>
-              <div><span class="label">Pace</span><span class="v">4:52</span></div>
-              <div><span class="label">Rest km</span><span class="v">0,91</span></div>
+          <div class="screen">
+            <div class="status"><span>7:51</span><span>5G</span></div>
+            <div class="appbar">Runde von Juno</div>
+            <div class="map">
+              <svg viewBox="0 0 300 330" preserveAspectRatio="xMidYMid slice" shape-rendering="crispEdges">
+                <rect width="300" height="330" fill="#121212"/>
+                <g fill="none" stroke="#2b2b2b" stroke-width="6">
+                  <path d="M0 120 L300 70"/><path d="M40 330 L90 0"/><path d="M230 330 L300 210"/>
+                </g>
+                <g fill="#1c1c1c"><rect x="16" y="150" width="60" height="44"/><rect x="200" y="110" width="80" height="60"/><rect x="190" y="230" width="44" height="70"/></g>
+                <!-- Heading up: the way ahead runs straight up -->
+                <path d="M150 330 L150 210 L156 120 L176 40 L190 0" fill="none" stroke="#1b1b1b" stroke-width="16" stroke-linejoin="round" shape-rendering="auto"/>
+                <path d="M150 330 L150 210 L156 120 L176 40 L190 0" fill="none" stroke="#6b7f1d" stroke-width="10" stroke-linejoin="round" shape-rendering="auto"/>
+                <path d="M150 330 L150 210 L156 120 L176 40 L190 0" fill="none" stroke="#1b1b1b" stroke-width="2" stroke-dasharray="6 8" shape-rendering="auto"/>
+              </svg>
+              <div class="me"></div>
+              <div class="ghost"><img src="/assets/rivals/juno.svg" alt=""></div>
+            </div>
+            <div class="sheet">
+              <div class="gap-row">
+                <span class="gap">+5<small>s</small></span>
+                <span class="gap-side"><b><svg class="px s12" viewBox="0 0 12 12"><path d="M5 1h2v1h-2zM4 2h4v1h-4zM3 3h6v1h-6zM2 4h8v1h-8zM5 5h2v1h-2zM5 6h2v1h-2zM5 7h2v1h-2zM5 8h2v1h-2zM5 9h2v1h-2zM5 10h2v1h-2z"/></svg>Vorne</b><span class="digits">+23 m</span></span>
+              </div>
+              <div class="bar"><span class="label">Du</span><i style="--v: 42%"></i></div>
+              <div class="bar ghost-bar"><span class="label">Juno</span><i style="--v: 38%"></i></div>
+              <div class="stats">
+                <div><span class="label">Zeit</span><span class="digits">13:02</span></div>
+                <div><span class="label">Pace</span><span class="digits">3:41<small>/km</small></span></div>
+                <div><span class="label">Rest</span><span class="digits">5,6<small>km</small></span></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- The 20 rivals marching past -->
+    <section class="parade" aria-label="Die 20 Rivalen">
+      <div class="track">
+        <div class="row">
+          <img src="/assets/rivals/toni.svg" alt="Toni"><img src="/assets/rivals/mira.svg" alt="Mira"><img src="/assets/rivals/benny.svg" alt="Benny"><img src="/assets/rivals/hausmeister.svg" alt="Der Hausmeister"><img src="/assets/rivals/fiete.svg" alt="Fiete"><img src="/assets/rivals/okan.svg" alt="Pelle"><img src="/assets/rivals/jana.svg" alt="Jana"><img src="/assets/rivals/woelfin.svg" alt="Die Stadtwölfin"><img src="/assets/rivals/rhea.svg" alt="Rhea"><img src="/assets/rivals/malte.svg" alt="Malte"><img src="/assets/rivals/sora.svg" alt="Sora"><img src="/assets/rivals/graf.svg" alt="Der Graf"><img src="/assets/rivals/viktor.svg" alt="Bruno"><img src="/assets/rivals/ines.svg" alt="Ida"><img src="/assets/rivals/nia.svg" alt="Nia"><img src="/assets/rivals/phantom.svg" alt="Das Phantom"><img src="/assets/rivals/kai.svg" alt="Kai"><img src="/assets/rivals/yara.svg" alt="Yara"><img src="/assets/rivals/juno.svg" alt="Juno"><img src="/assets/rivals/nullzeit.svg" alt="Nullzeit">
+        </div>
+        <div class="row" aria-hidden="true">
+          <img src="/assets/rivals/toni.svg" alt=""><img src="/assets/rivals/mira.svg" alt=""><img src="/assets/rivals/benny.svg" alt=""><img src="/assets/rivals/hausmeister.svg" alt=""><img src="/assets/rivals/fiete.svg" alt=""><img src="/assets/rivals/okan.svg" alt=""><img src="/assets/rivals/jana.svg" alt=""><img src="/assets/rivals/woelfin.svg" alt=""><img src="/assets/rivals/rhea.svg" alt=""><img src="/assets/rivals/malte.svg" alt=""><img src="/assets/rivals/sora.svg" alt=""><img src="/assets/rivals/graf.svg" alt=""><img src="/assets/rivals/viktor.svg" alt=""><img src="/assets/rivals/ines.svg" alt=""><img src="/assets/rivals/nia.svg" alt=""><img src="/assets/rivals/phantom.svg" alt=""><img src="/assets/rivals/kai.svg" alt=""><img src="/assets/rivals/yara.svg" alt=""><img src="/assets/rivals/juno.svg" alt=""><img src="/assets/rivals/nullzeit.svg" alt="">
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
     <section class="section" id="so-gehts">
       <div class="section-head">
         <span class="label">So geht's</span>
-        <h2>Drei Schritte bis zum Rennen</h2>
+        <h2 class="display">Drei Schritte<br>bis zum Rennen</h2>
       </div>
       <div class="steps">
-        <article class="step">
-          <div class="visual" aria-hidden="true">
-            <svg class="scene" viewBox="0 0 320 240" preserveAspectRatio="xMidYMid slice">
-              <rect width="320" height="240" fill="#212121"/>
-              <g fill="#2b2b2b"><rect x="20" y="20" width="60" height="40"/><rect x="230" y="160" width="70" height="60"/><rect x="20" y="170" width="70" height="50"/></g>
-              <path d="M160 60 L230 70 L255 130 L200 200 L125 205 L85 140 L110 80 Z" fill="none" stroke="#f4f4ef" stroke-opacity=".5" stroke-width="3"/>
-              <circle class="pulse" cx="160" cy="60" r="24" fill="none" stroke="#d4ff3a" stroke-width="2"/>
-              <circle cx="160" cy="60" r="24" fill="#d4ff3a" fill-opacity=".14" stroke="#d4ff3a" stroke-width="3"/>
-              <path d="M160 215 L160 92" fill="none" stroke="#f4f4ef" stroke-opacity=".35" stroke-width="2" stroke-dasharray="4 6"/>
-              <rect x="153" y="215" width="14" height="14" fill="#f4f4ef"/>
-              <rect x="192" y="46" width="96" height="28" rx="2" fill="#2b2b2b" stroke="#444444"/>
-              <text x="240" y="65" text-anchor="middle" fill="#f4f4ef" font-family="IBM Plex Mono, monospace" font-weight="500" font-size="12" letter-spacing="1">START 34 M</text>
-            </svg>
+        <article class="tile step">
+          <div class="mock map-mock" aria-hidden="true">
+            <div class="mini-panel">
+              <span class="mini-title">Entdecken</span>
+              <span class="mini-segs"><i>Alle</i><i class="on">Laufen</i><i>Rad</i></span>
+            </div>
+            <span class="pin" style="left: 22%; top: 58%"><img src="/assets/rivals/kai.svg" alt=""></span>
+            <span class="pin" style="left: 62%; top: 46%"><img src="/assets/rivals/juno.svg" alt=""></span>
+            <span class="pin" style="left: 48%; top: 76%"><img src="/assets/rivals/yara.svg" alt=""></span>
+            <span class="you" style="left: 40%; top: 60%"></span>
           </div>
           <div class="text">
             <span class="n">01</span>
-            <h3>Strecke in der Nähe finden</h3>
-            <p>Auf der Karte siehst du Strecken, die andere schon gelaufen oder gefahren sind. Geh zum Startkreis.</p>
+            <h3>Strecke finden</h3>
+            <p>Auf der Karte warten Rivalen mit ihren Runden in deiner Nähe. Tipp einen an und geh zum Startkreis.</p>
           </div>
         </article>
 
-        <article class="step">
-          <div class="visual" aria-hidden="true">
-            <div class="board">
-              <div class="row"><span class="rk">1</span><span class="nm">Lena</span><span class="tm">12:31</span></div>
-              <div class="row pick"><span class="rk">2</span><span class="nm">Tom</span><span class="tm">12:58</span></div>
-              <div class="row"><span class="rk">3</span><span class="nm">Du</span><span class="tm">13:22</span></div>
-              <div class="row"><span class="rk">4</span><span class="nm">Mia</span><span class="tm">14:05</span></div>
-            </div>
+        <article class="tile step">
+          <div class="mock board" aria-hidden="true">
+            <div class="row"><span class="rk">1</span><img src="/assets/rivals/juno.svg" alt=""><span class="nm">Juno</span><span class="tm">32:39</span></div>
+            <div class="row pick"><span class="rk">2</span><span class="av">L</span><span class="nm">Lena K.</span><span class="tm">33:10</span></div>
+            <div class="row"><span class="rk">3</span><span class="av">D</span><span class="nm">Du</span><span class="tm">34:02</span></div>
+            <div class="row"><span class="rk">4</span><img src="/assets/rivals/kai.svg" alt=""><span class="nm">Kai</span><span class="tm">35:48</span></div>
           </div>
           <div class="text">
             <span class="n">02</span>
             <h3>Ghost wählen</h3>
-            <p>Den Streckenrekord, deine eigene Bestzeit, einen Rivalen oder irgendeinen Eintrag aus der Rangliste.</p>
+            <p>Den Streckenrekord, deine eigene Bestzeit, einen Rivalen oder irgendwen aus der Rangliste.</p>
           </div>
         </article>
 
-        <article class="step">
-          <div class="visual" aria-hidden="true">
-            <div class="gapcard">
-              <span class="big">+8<small>s</small></span>
-              <span class="word"><svg class="px s12" viewBox="0 0 12 12" aria-hidden="true"><path d="M5 1h2v1h-2zM4 2h4v1h-4zM3 3h6v1h-6zM2 4h8v1h-8zM5 5h2v1h-2zM5 6h2v1h-2zM5 7h2v1h-2zM5 8h2v1h-2zM5 9h2v1h-2zM5 10h2v1h-2z"/></svg>Vorne</span>
-              <span class="sub">+31 m · noch 0,91 km</span>
-            </div>
+        <article class="tile step">
+          <div class="mock gapcard" aria-hidden="true">
+            <span class="big">+8<small>s</small></span>
+            <span class="word"><svg class="px s12" viewBox="0 0 12 12"><path d="M5 1h2v1h-2zM4 2h4v1h-4zM3 3h6v1h-6zM2 4h8v1h-8zM5 5h2v1h-2zM5 6h2v1h-2zM5 7h2v1h-2zM5 8h2v1h-2zM5 9h2v1h-2zM5 10h2v1h-2z"/></svg>Vorne</span>
+            <span class="label">+31 m · noch 0,9 km</span>
           </div>
           <div class="text">
             <span class="n">03</span>
             <h3>Lauf los</h3>
-            <p>Die Zeit startet, sobald du die Startlinie überquerst. Ab dann siehst du jede Sekunde, wie weit du vorne oder hinten liegst.</p>
+            <p>Die Zeit startet an der Startlinie. Die Karte dreht sich mit dir, und du siehst jede Sekunde, wie weit du vorne oder hinten liegst.</p>
           </div>
         </article>
       </div>
     </section>
 
+    <!-- Rivals -->
+    <section class="section split-section" id="rivalen">
+      <div class="section-head">
+        <span class="label">Rivalen</span>
+        <h2 class="display">Nie allein<br>am Start</h2>
+        <p class="lead-text">Auch wenn in deiner Gegend noch niemand läuft: 20 Rivalen in fünf Ligen, von Bronze bis Legende, legen ihre Runden in deiner Nähe an und ziehen mit, wenn du woanders bist. Jeder hat seinen eigenen Lauftyp, vom Sprinter bis zum Konterläufer.</p>
+        <ul class="checks">
+          <li>Besiegen, Pokal holen, bis zu drei Sterne sammeln</li>
+          <li>Boss besiegen und in die nächste Liga aufsteigen</li>
+          <li>Meister-Stufen: dieselben Gegner, nur schneller</li>
+        </ul>
+      </div>
+      <div class="tile collection" aria-hidden="true">
+        <div class="coll-head"><span class="badge" style="--c: #d4ff3a">Legende</span><span class="label">2 von 4 besiegt</span></div>
+        <div class="grid">
+          <figure class="beaten"><span class="frame"><img src="/assets/rivals/kai.svg" alt=""></span><figcaption>Kai</figcaption><span class="stars">★★★</span></figure>
+          <figure class="beaten"><span class="frame"><img src="/assets/rivals/juno.svg" alt=""></span><figcaption>Juno <em>M1</em></figcaption><span class="stars">★<i>★★</i></span></figure>
+          <figure><span class="frame"><img src="/assets/rivals/yara.svg" alt=""></span><figcaption>Yara</figcaption></figure>
+          <figure class="hidden"><span class="frame"><img src="/assets/rivals/nullzeit.svg" alt=""></span><figcaption>???</figcaption></figure>
+        </div>
+        <div class="coll-head"><span class="badge" style="--c: #9B7BFF">Elite</span><span class="label">4 von 4 besiegt</span></div>
+        <div class="grid">
+          <figure class="beaten"><span class="frame"><img src="/assets/rivals/viktor.svg" alt=""></span><figcaption>Bruno</figcaption><span class="stars">★★<i>★</i></span></figure>
+          <figure class="beaten"><span class="frame"><img src="/assets/rivals/ines.svg" alt=""></span><figcaption>Ida</figcaption><span class="stars">★<i>★★</i></span></figure>
+          <figure class="beaten"><span class="frame"><img src="/assets/rivals/nia.svg" alt=""></span><figcaption>Nia</figcaption><span class="stars">★★★</span></figure>
+          <figure class="beaten"><span class="frame"><img src="/assets/rivals/phantom.svg" alt=""></span><figcaption>Phantom</figcaption><span class="stars">★<i>★★</i></span></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Weekly race -->
+    <section class="section split-section flip" id="wochenrennen">
+      <div class="section-head">
+        <span class="label">Wochenrennen</span>
+        <h2 class="display">Jede Woche<br>ein Rennen</h2>
+        <p class="lead-text">In deiner Region startet jede Woche ein Rennen über 5 km, 10 km und 30 km auf dem Rad. Hol dir deine Startnummer: Rivalen und andere Läufer laufen live mit dir los. Wie schnell die anderen waren, siehst du erst nach deinem Lauf.</p>
+        <ul class="checks">
+          <li>Pokale für die Plätze 1 bis 3</li>
+          <li>Eine Medaille für alle im Ziel</li>
+          <li>Siegerehrung am Ende der Woche</li>
+        </ul>
+      </div>
+      <div class="tile race-card" aria-hidden="true">
+        <div class="bib">
+          <span class="bib-race">Wochenrennen</span>
+          <span class="bib-no">456</span>
+          <span class="bib-cat">5 km</span>
+        </div>
+        <div class="prizes">
+          <figure><img src="/assets/trophies/gold.svg" alt=""><figcaption>Platz 1</figcaption></figure>
+          <figure><img src="/assets/trophies/silver.svg" alt=""><figcaption>Platz 2</figcaption></figure>
+          <figure><img src="/assets/trophies/bronze.svg" alt=""><figcaption>Platz 3</figcaption></figure>
+          <figure><img src="/assets/trophies/finisher.svg" alt=""><figcaption>Im Ziel</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
     <section class="section" id="funktionen">
       <div class="section-head">
-        <span class="label">Funktionen</span>
-        <h2>Gebaut für draußen<span class="sticker"><b>20 Rivalen</b></span></h2>
+        <span class="label">Außerdem</span>
+        <h2 class="display">Gebaut für draußen</h2>
       </div>
       <div class="features">
-        <article class="feature">
+        <article class="tile feature">
           <svg class="px" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 1h3v1h-3zM6 1h2v1h-2zM1 2h3v1h-3zM6 2h2v1h-2zM1 3h1v1h-1zM4 3h2v1h-2zM8 3h2v1h-2zM1 4h1v1h-1zM4 4h2v1h-2zM8 4h2v1h-2zM1 5h3v1h-3zM6 5h2v1h-2zM1 6h3v1h-3zM6 6h2v1h-2zM1 7h1v1h-1zM1 8h1v1h-1zM1 9h1v1h-1zM1 10h1v1h-1z"/></svg>
           <h3>Ansagen im Ohr</h3>
-          <p>Du musst nicht aufs Handy schauen. Ghostrun sagt dir bei jedem Führungswechsel und alle 500 Meter, wie es steht. Deine Musik wird dabei nur kurz leiser.</p>
+          <p>Du musst nicht aufs Handy schauen. Bei jedem Führungswechsel und alle 500 Meter hörst du, wie es steht. Deine Musik wird nur kurz leiser.</p>
           <div class="quote">„Noch 1,5 Kilometer. Du liegst 12 Sekunden vorne.“</div>
         </article>
-        <article class="feature">
-          <svg class="px" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1h6v1h-6zM2 2h8v1h-8zM1 3h10v1h-10zM1 4h1v1h-1zM5 4h2v1h-2zM10 4h1v1h-1zM1 5h1v1h-1zM5 5h2v1h-2zM10 5h1v1h-1zM1 6h4v1h-4zM7 6h4v1h-4zM2 7h3v1h-3zM7 7h3v1h-3zM3 8h6v1h-6zM3 9h1v1h-1zM5 9h2v1h-2zM8 9h1v1h-1zM3 10h6v1h-6z"/></svg>
-          <h3>Rivalen in fünf Ligen</h3>
-          <p>Auch wenn noch niemand in deiner Gegend läuft: 20 Rivalen von Bronze bis Legende lauern auf Strecken und legen eigene Runden direkt bei dir an. Besiege sie, sammle Pokale und steig auf.</p>
-        </article>
-        <article class="feature">
+        <article class="tile feature">
           <svg class="px" viewBox="0 0 12 12" aria-hidden="true"><path d="M8 1h3v1h-3zM2 2h3v1h-3zM9 2h1v1h-1zM3 3h1v1h-1zM8 3h1v1h-1zM3 4h6v1h-6zM3 5h1v1h-1zM7 5h2v1h-2zM1 6h3v1h-3zM6 6h1v1h-1zM8 6h3v1h-3zM0 7h1v1h-1zM3 7h2v1h-2zM6 7h1v1h-1zM8 7h1v1h-1zM11 7h1v1h-1zM0 8h1v1h-1zM2 8h1v1h-1zM4 8h2v1h-2zM7 8h1v1h-1zM9 8h1v1h-1zM11 8h1v1h-1zM0 9h1v1h-1zM4 9h1v1h-1zM7 9h1v1h-1zM11 9h1v1h-1zM1 10h3v1h-3zM8 10h3v1h-3z"/></svg>
           <h3>Laufen und Rad</h3>
-          <p>Jede Strecke gehört zu einer Sportart und hat ihre eigene Rangliste. Läufer treten gegen Läufer an, Radfahrer gegen Radfahrer.</p>
+          <p>Jede Strecke gehört zu einer Sportart und hat ihre eigene Rangliste. Läufer gegen Läufer, Radfahrer gegen Radfahrer.</p>
           <div class="split"><span>min/km</span><span>km/h</span></div>
         </article>
-        <article class="feature">
+        <article class="tile feature">
           <svg class="px" viewBox="0 0 12 12" aria-hidden="true"><path d="M7 0h2v1h-2zM7 1h2v1h-2zM4 2h5v1h-5zM3 3h2v1h-2zM6 3h3v1h-3zM2 4h2v1h-2zM6 4h4v1h-4zM6 5h2v1h-2zM9 5h2v1h-2zM5 6h4v1h-4zM4 7h2v1h-2zM8 7h2v1h-2zM3 8h2v1h-2zM9 8h2v1h-2zM2 9h2v1h-2zM10 9h1v1h-1zM1 10h2v1h-2z"/></svg>
           <h3>Jeder Lauf wird zum Ghost</h3>
-          <p>Deine Läufe werden aufgezeichnet, auch bei gesperrtem Bildschirm. Aus jedem kannst du eine neue Strecke machen, gegen die andere dann antreten.</p>
+          <p>Ghostrun zeichnet deine Läufe auf, auch bei gesperrtem Bildschirm. Aus jedem kannst du eine Strecke machen, gegen die andere dann antreten.</p>
+        </article>
+        <article class="tile feature">
+          <svg class="px" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1h3v1h-3zM7 1h3v1h-3zM1 2h5v1h-5zM6 2h5v1h-5zM1 3h10v1h-10zM1 4h10v1h-10zM2 5h8v1h-8zM3 6h6v1h-6zM4 7h4v1h-4zM5 8h2v1h-2z"/></svg>
+          <h3>Mit Freunden</h3>
+          <p>Folge anderen, sieh ihre Läufe im Feed, gib Likes und schreib Kommentare. Du entscheidest pro Lauf, wer ihn sieht, und Start und Ziel bleiben für andere verborgen.</p>
         </article>
       </div>
     </section>
 
     <section class="cta-band">
-      <h2><span class="sprint">Los geht's</span>Bereit für deinen ersten Ghost?</h2>
+      <span class="sprint">Los geht's</span>
+      <h2 class="display">Bereit für deinen ersten Ghost?</h2>
       <a class="btn lime" href="/login/#registrieren">Konto erstellen <svg class="px" viewBox="0 0 12 12" aria-hidden="true"><path d="M7 2h1v1h-1zM7 3h2v1h-2zM7 4h3v1h-3zM1 5h10v1h-10zM1 6h10v1h-10zM7 7h3v1h-3zM7 8h2v1h-2zM7 9h1v1h-1z"/></svg></a>
     </section>
   </main>

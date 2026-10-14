@@ -7,6 +7,9 @@
 @font-face { font-family: "Archivo"; src: url("/assets/fonts/Archivo_800ExtraBold_Italic.ttf") format("truetype"); font-weight: 800; font-style: italic; font-display: swap; }
 @font-face { font-family: "IBM Plex Mono"; src: url("/assets/fonts/IBMPlexMono_400Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
 @font-face { font-family: "IBM Plex Mono"; src: url("/assets/fonts/IBMPlexMono_500Medium.ttf") format("truetype"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Handjet"; src: url("/assets/fonts/Handjet_500Medium.ttf") format("truetype"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Handjet"; src: url("/assets/fonts/Handjet_600SemiBold.ttf") format("truetype"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Handjet"; src: url("/assets/fonts/Handjet_700Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
 @font-face { font-family: "Silkscreen"; src: url("/assets/fonts/Silkscreen_400Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
 
 :root {
@@ -29,6 +32,7 @@
   --sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
   --pixel: "Silkscreen", "IBM Plex Mono", monospace;
+  --digits: "Handjet", "IBM Plex Mono", monospace;
   --steps: steps(3);
   color-scheme: dark;
 }
@@ -40,7 +44,7 @@ img, svg { max-width: 100%; }
 a { color: inherit; text-underline-offset: 3px; }
 h1, h2, h3, p { margin: 0; }
 h1, h2 { text-wrap: balance; }
-.num { font-family: var(--pixel); }
+.num, .digits { font-family: var(--digits); }
 .label { font: 400 12px/16px var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-muted); }
 .meta { font: 400 16px/24px var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-muted); }
 .muted { color: var(--ink-muted); }
@@ -102,110 +106,8 @@ h1, h2 { text-wrap: balance; }
 }
 .link:hover { color: var(--ink); }
 
-/* ---------- Landing ---------- */
+/* ---------- Page frame (login, account, legal) ---------- */
 .page { max-width: 1120px; margin: 0 auto; }
-.hero { display: grid; grid-template-columns: 1.15fr .85fr; gap: 56px; align-items: center; padding: 64px 0 96px; }
-.ghost-mark { display: block; width: 112px; height: auto; fill: var(--lime); shape-rendering: crispEdges; margin-bottom: 32px; }
-@media (max-width: 640px) { .ghost-mark { width: 84px; } }
-.hero h1 { font: 500 clamp(56px, 9vw, 112px)/.92 var(--sans); letter-spacing: -.045em; text-transform: uppercase; }
-.hero .lead { margin-top: 24px; max-width: 40ch; }
-.hero .ctas { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 32px; }
-.hero .ctas .btn { width: auto; }
-.hero .soon { margin-top: 20px; }
-.hero-visual { display: flex; justify-content: center; position: relative; }
-@media (max-width: 880px) { .hero { grid-template-columns: 1fr; gap: 48px; padding-top: 40px; } }
-
-.section { padding: 48px 0 72px; }
-.section-head { display: flex; flex-direction: column; gap: 12px; max-width: 60ch; margin-bottom: 32px; }
-.section-head h2 { font: 500 clamp(40px, 6vw, 72px)/.95 var(--sans); letter-spacing: -.04em; text-transform: uppercase; }
-
-/* Sticker: stepped corners plus loose pixels */
-.sticker { position: relative; display: inline-block; isolation: isolate; vertical-align: top; margin-left: 12px; }
-.sticker b {
-  display: inline-block; padding: 4px 12px; background: var(--lime); color: var(--on-lime);
-  font: 500 16px/24px var(--mono); letter-spacing: .06em; text-transform: uppercase;
-  clip-path: polygon(0 4px, 4px 4px, 4px 0, calc(100% - 4px) 0, calc(100% - 4px) 4px, 100% 4px, 100% calc(100% - 4px), calc(100% - 4px) calc(100% - 4px), calc(100% - 4px) 100%, 4px 100%, 4px calc(100% - 4px), 0 calc(100% - 4px));
-}
-.sticker::before, .sticker::after { content: ""; position: absolute; z-index: -1; background: var(--lime); }
-.sticker::before { top: -8px; right: 12px; width: 8px; height: 8px; box-shadow: 8px 0 0 0 var(--lime), 16px 16px 0 0 var(--lime); }
-.sticker::after { bottom: -8px; left: 40%; width: 16px; height: 8px; }
-/* Narrow screens: the sticker wraps under the headline; keep its loose pixels off the letters. */
-@media (max-width: 640px) { .sticker { display: table; margin: 24px 0 8px; } }
-
-.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-@media (max-width: 880px) { .steps { grid-template-columns: 1fr; } }
-.step { background: var(--raised); border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; min-width: 0; }
-.step .visual { aspect-ratio: 4 / 3; background: var(--sunken); position: relative; overflow: hidden; }
-.step .visual svg.scene { position: absolute; inset: 0; width: 100%; height: 100%; }
-.step .text { padding: 20px 20px 24px; display: flex; flex-direction: column; gap: 8px; }
-.step .n { font: 400 16px/20px var(--pixel); color: var(--lime-ink); }
-.step h3 { font: 500 24px/28px var(--sans); letter-spacing: -.01em; }
-.step p { color: var(--ink-muted); font-size: 15px; line-height: 22px; }
-
-.board { position: absolute; inset: 16px; display: flex; flex-direction: column; justify-content: center; }
-.board .row { display: grid; grid-template-columns: 28px 1fr auto; align-items: center; gap: 12px; padding: 10px 8px; border: 1px solid transparent; border-bottom-color: var(--line); }
-.board .row.pick { border-color: var(--ghost); background: rgba(132, 148, 255, .12); }
-.board .rk { font: 400 16px/1 var(--pixel); color: var(--ink-muted); }
-.board .nm { font-size: 15px; font-weight: 600; }
-.board .tm { font: 400 20px/1 var(--pixel); }
-
-.gapcard { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 0 24px; gap: 8px; }
-.gapcard .big { font: 400 72px/72px var(--pixel); color: var(--lime-ink); }
-.gapcard .big small { font-size: 40px; }
-.gapcard .word { display: inline-flex; align-items: center; gap: 4px; font: 500 14px/18px var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--lime-ink); }
-.gapcard .sub { font: 400 12px/16px var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-muted); }
-
-.features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-@media (max-width: 760px) { .features { grid-template-columns: 1fr; } }
-.feature { background: var(--raised); border-radius: 4px; padding: 24px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
-.feature > .px { color: var(--ink-muted); }
-.feature h3 { font: 500 24px/28px var(--sans); letter-spacing: -.01em; }
-.feature p { color: var(--ink-muted); font-size: 15px; line-height: 22px; }
-.feature .quote { margin-top: 4px; padding: 12px 16px; border-radius: 2px; background: var(--sunken); font-size: 15px; line-height: 22px; }
-.feature .split { display: flex; gap: 8px; margin-top: 4px; flex-wrap: wrap; }
-.feature .split span { font: 400 12px/16px var(--pixel); letter-spacing: .04em; text-transform: uppercase; height: 24px; display: inline-flex; align-items: center; padding: 0 8px; background: var(--sunken); box-shadow: inset 0 0 0 1px var(--line-strong); }
-
-.cta-band { margin: 24px 0 0; border-top: 1px solid var(--line); padding: 56px 0; display: flex; flex-wrap: wrap; gap: 32px; align-items: center; justify-content: space-between; }
-.cta-band h2 { font: 500 clamp(40px, 6vw, 72px)/.95 var(--sans); letter-spacing: -.04em; text-transform: uppercase; max-width: 14ch; }
-.cta-band .sprint { display: block; font: italic 800 32px/32px var(--sans); letter-spacing: -.02em; text-transform: uppercase; color: var(--lime-ink); margin-bottom: 12px; }
-.cta-band .btn { width: auto; }
-
-/* ---------- Phone mockup: the race screen as in the app ---------- */
-.phone {
-  width: 100%; max-width: 330px; aspect-ratio: 330 / 690; background: var(--ground); border-radius: 40px;
-  border: 8px solid var(--sunken); box-shadow: 0 0 0 1px var(--line), 12px 12px 0 0 var(--lime);
-  overflow: hidden; display: flex; flex-direction: column;
-}
-.phone .status { height: 36px; flex: none; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; font: 500 12px/1 var(--mono); }
-.phone .bar { flex: none; padding: 4px 16px 10px; font: 500 12px/16px var(--mono); letter-spacing: .06em; text-transform: uppercase; border-bottom: 1px solid var(--line); }
-.phone .map { position: relative; flex: 1 1 auto; min-height: 0; background: var(--sunken); }
-.phone .map svg { position: absolute; inset: 0; width: 100%; height: 100%; }
-.phone .seg { position: absolute; right: 12px; top: 12px; display: inline-flex; background: var(--sunken); border-radius: 4px; padding: 3px; gap: 3px; border: 1px solid var(--line); }
-.phone .seg span { font: 500 11px/1 var(--mono); letter-spacing: .06em; padding: 7px 10px; border-radius: 2px; color: var(--ink-muted); }
-.phone .seg span.on { background: var(--ink); color: var(--ground); }
-.phone .sheet { flex: none; padding: 16px 16px 20px; display: flex; flex-direction: column; gap: 10px; border-top: 1px solid var(--line); }
-.phone .gap-row { display: flex; align-items: flex-end; justify-content: space-between; }
-.phone .gap { font: 400 60px/60px var(--pixel); color: var(--lime-ink); }
-.phone .gap small { font-size: 32px; }
-.phone .gap-txt { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; padding-bottom: 6px; }
-.phone .gap-txt b { display: inline-flex; align-items: center; gap: 4px; font: 500 12px/16px var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--lime-ink); }
-.phone .gap-txt span { font: 400 14px/1 var(--pixel); color: var(--ink-muted); }
-.prog { display: flex; flex-direction: column; gap: 4px; }
-.prog .lbl { font: 400 10px/12px var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-muted); }
-.prog .segs { display: grid; grid-template-columns: repeat(24, 1fr); gap: 2px; }
-.prog .segs i { height: 8px; background: var(--sunken); }
-.prog .segs i.on { background: var(--lime); }
-.prog.ghost .segs i.on { background: var(--periwinkle); }
-.phone .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 2px; }
-.phone .stats div { display: flex; flex-direction: column; gap: 4px; }
-.phone .stats .label { font-size: 10px; line-height: 12px; }
-.phone .stats .v { font: 400 20px/24px var(--pixel); }
-
-@keyframes ring { 0% { r: 24; opacity: .7; } 66%, 100% { r: 44; opacity: 0; } }
-.pulse { animation: ring 1.6s steps(4) infinite; }
-@keyframes glide { from { transform: translate(0, 0); } to { transform: translate(8px, -6px); } }
-.ghost-dot { animation: glide 2.4s steps(6) infinite alternate; }
-@media (prefers-reduced-motion: reduce) { .pulse, .ghost-dot { animation: none; } html { scroll-behavior: auto; } .btn { transition: none; } }
 
 /* ---------- Auth pages (like the app's auth screens) ---------- */
 .auth { max-width: 440px; margin: 0 auto; padding: 40px 0 32px; display: flex; flex-direction: column; gap: 28px; }
@@ -254,7 +156,7 @@ h1, h2 { text-wrap: balance; }
 .account-head #email { font: 400 16px/24px var(--mono); letter-spacing: .06em; }
 .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .stat { background: var(--raised); border-radius: 4px; padding: 16px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
-.stat .value { font: 400 40px/44px var(--pixel); }
+.stat .value { font: 500 48px/48px var(--digits); }
 .stat .value small { font: 500 14px/18px var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-muted); margin-left: 6px; }
 .columns { display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; align-items: start; }
 .panel { background: var(--raised); border-radius: 4px; padding: 24px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
