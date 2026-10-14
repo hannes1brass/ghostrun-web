@@ -3,7 +3,7 @@
    app screens, the rivals as crisp pixel sprites. Only what the app can do. */
 
 .home { max-width: 1240px; margin: 0 auto; }
-.display { font: 700 clamp(48px, 7vw, 88px)/.9 var(--digits); letter-spacing: .01em; text-transform: uppercase; }
+.display { font: 700 clamp(40px, 5.5vw, 76px)/.92 var(--digits); letter-spacing: .01em; text-transform: uppercase; text-wrap: balance; }
 .home img { image-rendering: pixelated; }
 
 /* Stepped 4 px corners, as on the pixel sticker. */
@@ -17,8 +17,8 @@
 }
 
 /* ---------- Hero ---------- */
-.hero { display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center; padding: 64px 0 80px; }
-.hero h1 { font-size: clamp(64px, 10vw, 128px); margin-top: 24px; }
+.hero { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 48px; align-items: center; padding: 72px 0 88px; }
+.hero h1 { font-size: clamp(56px, 8.5vw, 120px); margin-top: 24px; max-width: 9ch; }
 .hero h1 .hl { color: var(--lime-ink); }
 .hero .lead { margin-top: 24px; max-width: 42ch; }
 .ctas { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 32px; }
@@ -28,8 +28,8 @@
 .facts b { font: 500 32px/32px var(--digits); color: var(--ink); }
 
 /* The phone: stepped corners, hard lime shadow that follows them. */
-.hero-visual { display: flex; justify-content: center; }
-.phone { width: 300px; filter: drop-shadow(8px 8px 0 var(--lime)); }
+.hero-visual { display: flex; justify-content: flex-end; padding-right: 8px; }
+.phone { width: min(320px, 100%); filter: drop-shadow(8px 8px 0 var(--lime)); }
 .phone .screen {
   background: var(--ground); border: 0; padding-bottom: 12px;
   clip-path: polygon(0 8px, 8px 8px, 8px 0, calc(100% - 8px) 0, calc(100% - 8px) 8px, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 8px calc(100% - 8px), 0 calc(100% - 8px));
@@ -68,8 +68,8 @@
 .phone .stats small { font: 500 10px/1 var(--mono); color: var(--ink-muted); margin-left: 3px; text-transform: uppercase; }
 
 /* ---------- Sections ---------- */
-.section { padding: 88px 0 24px; }
-.section-head { display: flex; flex-direction: column; gap: 16px; max-width: 60ch; margin-bottom: 40px; }
+.section { padding: 96px 0 8px; }
+.section-head { display: flex; flex-direction: column; gap: 16px; max-width: 46ch; margin-bottom: 40px; }
 .lead-text { color: var(--ink-muted); }
 .checks { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
 .checks li { display: flex; gap: 12px; align-items: baseline; }
@@ -121,9 +121,8 @@
 .gapcard .word { display: inline-flex; align-items: center; gap: 4px; font: 500 14px/18px var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--lime-ink); }
 
 /* Rivals and weekly race: text and a picture side by side */
-.split-section { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.split-section { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 48px; align-items: center; }
 .split-section .section-head { margin-bottom: 0; }
-.split-section.flip .tile { order: -1; }
 
 .collection { padding: 24px; display: flex; flex-direction: column; gap: 16px; }
 .coll-head { display: flex; justify-content: space-between; align-items: center; }
@@ -174,16 +173,44 @@
 
 /* ---------- Small screens ---------- */
 @media (max-width: 900px) {
-  .hero { grid-template-columns: 1fr; gap: 56px; padding-top: 40px; }
-  .steps { grid-template-columns: 1fr; }
-  .split-section { grid-template-columns: 1fr; gap: 40px; }
-  .split-section.flip .tile { order: 0; }
-  .features { grid-template-columns: 1fr; }
+  .hero { grid-template-columns: 1fr; gap: 48px; padding-top: 40px; }
+  .hero-visual { justify-content: center; padding-right: 8px; }
+  .split-section { grid-template-columns: 1fr; gap: 32px; }
+  .features { grid-template-columns: 1fr 1fr; gap: 20px; }
 }
-@media (max-width: 480px) {
-  .hero h1 { font-size: 64px; }
-  .phone { width: 280px; }
-  .collection { padding: 16px; }
-  .grid { gap: 8px; }
-}
+@media (max-width: 640px) {
+  .section { padding-top: 64px; }
+  .section-head { gap: 12px; margin-bottom: 24px; }
+  .hero { padding: 28px 0 56px; gap: 40px; }
+  .hero h1 { font-size: 60px; }
+  .hero .lead { margin-top: 16px; font-size: 14px; line-height: 22px; }
+  .ctas { margin-top: 24px; }
+  .ctas .btn.secondary { display: none; }
+  .facts { margin-top: 24px; padding-top: 16px; gap: 6px 20px; }
+  .facts b { font-size: 26px; line-height: 26px; }
+  .phone { width: 264px; }
+  .phone .map { height: 220px; }
+  .tile { box-shadow: 4px 4px 0 0 var(--lime); }
 
+  /* The three steps as cards to swipe through. */
+  .steps { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; margin-inline: -24px; padding: 0 24px 12px; scrollbar-width: none; }
+  .steps::-webkit-scrollbar { display: none; }
+  .steps .step { flex: 0 0 82%; scroll-snap-align: center; }
+  .mock { height: 170px; }
+  .step .text { padding: 16px 16px 20px; }
+
+  /* Details stay on the big screen. */
+  .checks, .feature .quote, .feature .split, .coll-note { display: none; }
+  .collection { padding: 16px; gap: 12px; }
+  .grid { gap: 8px; }
+  .race-card { padding: 24px 16px; gap: 20px; }
+  .bib-no { font-size: 80px; line-height: 70px; }
+  .prizes img { width: 44px; height: 44px; }
+
+  /* Extras as a compact 2 x 2 grid. */
+  .features { gap: 12px; }
+  .feature { padding: 16px; gap: 8px; }
+  .feature h3 { font-size: 16px; line-height: 20px; }
+  .feature p { font-size: 13px; line-height: 19px; }
+  .cta-band { margin: 64px 0 48px; padding: 40px 0; }
+}
